@@ -1,0 +1,464 @@
+{
+  "extName": {
+    "message": "Spam Trace"
+  },
+  "extDescription": {
+    "message": "Trace the origins of spam emails on a map."
+  },
+  "statusAnalyzing": {
+    "message": "Analyzing..."
+  },
+  "statusNoMessage": {
+    "message": "No message is displayed. Open a message and try again."
+  },
+  "errorGeneric": {
+    "message": "Error: $DETAIL$",
+    "placeholders": {
+      "detail": {
+        "content": "$1"
+      }
+    }
+  },
+  "secRiskScore": {
+    "message": "Risk Score"
+  },
+  "secRouteMap": {
+    "message": "Delivery Route Map (red = origin / blue = relay)"
+  },
+  "secSender": {
+    "message": "Sender"
+  },
+  "secAuth": {
+    "message": "Authentication"
+  },
+  "secReceivedChain": {
+    "message": "Received Chain (newest → oldest)"
+  },
+  "secMailInfo": {
+    "message": "Message Info"
+  },
+  "labelRelayCount": {
+    "message": "Relays"
+  },
+  "senderNotDetected": {
+    "message": "Not detected"
+  },
+  "unknownVerdict": {
+    "message": "Unknown"
+  },
+  "noScoreFactors": {
+    "message": "No risk factors"
+  },
+  "geoLookupFailed": {
+    "message": "GeoIP lookup failed: $DETAIL$ (score based on headers only)",
+    "placeholders": {
+      "detail": {
+        "content": "$1"
+      }
+    }
+  },
+  "noReceivedHeader": {
+    "message": "No Received headers"
+  },
+  "mapNoGeo": {
+    "message": "No IP with location data; map unavailable."
+  },
+  "mapClickHint": {
+    "message": "Click a marker for details."
+  },
+  "markerOrigin": {
+    "message": "Origin"
+  },
+  "markerRelay": {
+    "message": "Relay"
+  },
+  "reasonHosting": {
+    "message": "Hosting/datacenter IP"
+  },
+  "reasonHighRiskCloud": {
+    "message": "High-risk cloud ($ORG$)",
+    "placeholders": {
+      "org": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonVpnProxy": {
+    "message": "VPN/proxy detected"
+  },
+  "reasonTor": {
+    "message": "TOR exit node"
+  },
+  "reasonSpf": {
+    "message": "SPF $RESULT$",
+    "placeholders": {
+      "result": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonDkimFail": {
+    "message": "DKIM fail"
+  },
+  "reasonUnknownHost": {
+    "message": "Sender host unknown"
+  },
+  "reasonDynamicHost": {
+    "message": "Dynamic-looking sender hostname"
+  },
+  "reasonDmarcFail": {
+    "message": "DMARC fail"
+  },
+  "reasonFromRpMismatch": {
+    "message": "From/Return-Path domain mismatch"
+  },
+  "reasonReplyToMismatch": {
+    "message": "Reply-To domain differs from From"
+  },
+  "reasonMsgIdMismatch": {
+    "message": "Message-ID domain differs from From"
+  },
+  "reasonDateAnomaly": {
+    "message": "Date header anomaly"
+  },
+  "reasonNoReceived": {
+    "message": "No Received headers"
+  },
+  "deductSpfPass": {
+    "message": "SPF pass"
+  },
+  "deductDkimPass": {
+    "message": "DKIM pass"
+  },
+  "deductDmarcPass": {
+    "message": "DMARC pass"
+  },
+  "optTitle": {
+    "message": "Spam Trace - Statistics Upload Settings"
+  },
+  "optServerUrl": {
+    "message": "API server URL (POST endpoint)"
+  },
+  "optAutoSend": {
+    "message": "Send automatically when batch size is reached"
+  },
+  "optBatchSize": {
+    "message": "Batch size (events)"
+  },
+  "optSave": {
+    "message": "Save"
+  },
+  "optSendNow": {
+    "message": "Send now"
+  },
+  "optExport": {
+    "message": "Download JSON"
+  },
+  "optPending": {
+    "message": "Pending events"
+  },
+  "optSaved": {
+    "message": "Settings saved."
+  },
+  "optSendOk": {
+    "message": "Sent $N$ events.",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "optSendFail": {
+    "message": "Send failed: $DETAIL$",
+    "placeholders": {
+      "detail": {
+        "content": "$1"
+      }
+    }
+  },
+  "optNoUrl": {
+    "message": "Server URL is not set."
+  },
+  "optBadUrl": {
+    "message": "Invalid URL."
+  },
+  "optPermDenied": {
+    "message": "Permission for the server origin was not granted."
+  },
+  "reasonLinkTextSpoof": {
+    "message": "Link text/URL mismatch (spoofed link)"
+  },
+  "reasonIpLink": {
+    "message": "Direct IP link"
+  },
+  "reasonPunycode": {
+    "message": "Punycode domain link"
+  },
+  "reasonShortener": {
+    "message": "URL shortener link"
+  },
+  "reasonAllLinksMismatch": {
+    "message": "All links differ from sender domain"
+  },
+  "phishingWarning": {
+    "message": "Phishing suspected: spoofed or suspicious links detected"
+  },
+  "reasonBrandSpoof": {
+    "message": "Brand impersonation: claims $BRAND$ but sent from unrelated domain",
+    "placeholders": {
+      "brand": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonBrandAuthFail": {
+    "message": "Claims $BRAND$ with failed authentication",
+    "placeholders": {
+      "brand": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonBrandUnverified": {
+    "message": "$BRAND$ domain but authentication not verifiable",
+    "placeholders": {
+      "brand": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonNewCountry": {
+    "message": "First time seeing this sender country for $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonNewAsn": {
+    "message": "First time seeing this ASN for $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "optBrands": {
+    "message": "Custom brands (JSON)"
+  },
+  "optBrandsHelp": {
+    "message": "Format: [{\"name\":\"...\",\"patterns\":[\"...\"],\"domains\":[\"...\"]}]"
+  },
+  "optBadBrands": {
+    "message": "Invalid custom brands JSON."
+  },
+  "reasonBrandMention": {
+    "message": "Mentions $BRAND$ but sent from another domain (weak signal)",
+    "placeholders": {
+      "brand": {
+        "content": "$1"
+      }
+    }
+  },
+  "optTrusted": {
+    "message": "Trusted domains (no alerts)"
+  },
+  "optTrustedHelp": {
+    "message": "One domain per line"
+  },
+  "deductSameDomainRoute": {
+    "message": "Direct delivery via sender's own domain only"
+  },
+  "deductTrustedHost": {
+    "message": "Trusted email delivery platform (authenticated)"
+  },
+  "feedbackPrompt": {
+    "message": "Your verdict:"
+  },
+  "feedbackSpam": {
+    "message": "Spam"
+  },
+  "feedbackHam": {
+    "message": "Legitimate"
+  },
+  "feedbackSpamDone": {
+    "message": "Learned as spam."
+  },
+  "feedbackHamDone": {
+    "message": "Learned as legitimate."
+  },
+  "reasonLearnedSignals": {
+    "message": "Learned signal pattern"
+  },
+  "reasonLearnedDomain": {
+    "message": "Learned reputation for $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonLearnedAsn": {
+    "message": "Learned reputation for $ASN$",
+    "placeholders": {
+      "asn": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLearnExport": {
+    "message": "Export learning"
+  },
+  "optLearnReset": {
+    "message": "Reset learning"
+  },
+  "optLearnResetDone": {
+    "message": "Learning data cleared."
+  },
+  "feedbackReportSpam": {
+    "message": "Suspicious Email"
+  },
+  "feedbackReported": {
+    "message": "Suspicious ✓ (undo)"
+  },
+  "feedbackReportedDone": {
+    "message": "Reported as spam and learned."
+  },
+  "feedbackUnreportedDone": {
+    "message": "Spam report withdrawn."
+  },
+  "reasonReportedDomain": {
+    "message": "Reported-spam reputation for $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonReportedAsn": {
+    "message": "Reported-spam reputation for $ASN$",
+    "placeholders": {
+      "asn": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonReportedSignals": {
+    "message": "Pattern of reported spam"
+  },
+  "optAlertThreshold": {
+    "message": "Show alert window when score is at least"
+  },
+  "optAlertThresholdHelp": {
+    "message": "0–100. Set 0 to alert on every message. Leave blank for default."
+  },
+  "feedbackJunkFailed": {
+    "message": "could not mark as junk in Thunderbird"
+  },
+  "feedbackLegit": {
+    "message": "Legitimate"
+  },
+  "feedbackLegitMarked": {
+    "message": "Legitimate ✓ (undo)"
+  },
+  "feedbackLegitDone": {
+    "message": "Marked legitimate and learned."
+  },
+  "reasonLegitDomain": {
+    "message": "Marked-legitimate reputation for $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonLegitAsn": {
+    "message": "Marked-legitimate reputation for $ASN$",
+    "placeholders": {
+      "asn": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMapCenter": {
+    "message": "Map center (your location)"
+  },
+  "optMapCenterHelp": {
+    "message": "Choose your country, or enter latitude/longitude below (overrides the country). Blank = auto."
+  },
+  "optGeoProvider": {
+    "message": "Online IP location lookup"
+  },
+  "optGeoProviderHelp": {
+    "message": "Header IP addresses are sent to the selected provider only for geolocation. Choose Off for no external lookup. A local offline database will become the default in a future version."
+  },
+  "optTor": {
+    "message": "Check Tor exit nodes (online)"
+  },
+  "optTorHelp": {
+    "message": "When enabled, downloads the Tor exit-node list from check.torproject.org over HTTPS. Off by default."
+  },
+  "dbipAttribution": {
+    "message": "IP–country data by"
+  },
+  "hopColNo": {
+    "message": "#"
+  },
+  "hopColIp": {
+    "message": "IP"
+  },
+  "hopColCountry": {
+    "message": "Country"
+  },
+  "hopColAsn": {
+    "message": "ASN"
+  },
+  "welcomeTitle": {
+    "message": "Spam Trace is installed"
+  },
+  "welcomeIntro": {
+    "message": "Trace the origins of spam emails on a map. Spam Trace analyzes message headers to estimate spam/phishing risk, shows the reasons and delivery route — fully offline by default."
+  },
+  "welcomePrivacyHead": {
+    "message": "About the “Read your email messages” permission"
+  },
+  "welcomePrivacy": {
+    "message": "Thunderbird shows this permission for any add-on that can read mail. Spam Trace analyzes the message headers, and reads the body only to check links (for phishing) and to compute a hash. Your message subject and body text are never stored or sent — only hashes are kept, on your computer."
+  },
+  "welcomeOffline": {
+    "message": "Online lookups (detailed geolocation, Tor check, statistics upload) are OFF by default. Each asks for its own permission when you turn it on in Options."
+  },
+  "welcomeOpenOptions": {
+    "message": "Open settings"
+  },
+  "welcomeTag": {
+    "message": "Email header analysis · offline by default"
+  },
+  "welcomeUseHead": {
+    "message": "How to use"
+  },
+  "welcomeUse1": {
+    "message": "Open a message, then click the Spam Trace button in the message toolbar to see its risk score, the reasons, and the delivery route map."
+  },
+  "welcomeUse2": {
+    "message": "Click “Suspicious Email” (which also sets Thunderbird’s Junk flag) or “Legitimate” — Spam Trace learns from your feedback to refine future scores."
+  },
+  "welcomeUse3": {
+    "message": "High-risk messages can pop up an alert window automatically (you can set the threshold in Settings)."
+  },
+  "welcomeAnalyzeHead": {
+    "message": "What it checks"
+  },
+  "welcomeAnalyze": {
+    "message": "The Received route and sender IP/ASN/country, SPF/DKIM/DMARC authentication, links in the body (comparing the sender domain with link domains), and brand-impersonation patterns — summarized as a 0–100 score with the reasons and a route map."
+  },
+  "welcomeOnlineHead": {
+    "message": "Online features are optional"
+  },
+  "welcomeData": {
+    "message": "IP-to-country uses a bundled DB-IP database (CC BY 4.0); the world map uses Natural Earth (public domain). Both are included in the add-on and used offline. The interface is available in English, Japanese, Chinese (Simplified), Spanish, German, and French."
+  },
+  "optHelp": {
+    "message": "Getting started / Help"
+  }
+}

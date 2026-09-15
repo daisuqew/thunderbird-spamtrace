@@ -1,0 +1,464 @@
+{
+  "extName": {
+    "message": "Spam Trace"
+  },
+  "extDescription": {
+    "message": "在地图上追踪垃圾邮件的来源。"
+  },
+  "statusAnalyzing": {
+    "message": "分析中..."
+  },
+  "statusNoMessage": {
+    "message": "未显示邮件。请先打开一封邮件再试。"
+  },
+  "errorGeneric": {
+    "message": "错误：$DETAIL$",
+    "placeholders": {
+      "detail": {
+        "content": "$1"
+      }
+    }
+  },
+  "secRiskScore": {
+    "message": "风险评分"
+  },
+  "secRouteMap": {
+    "message": "传输路径地图（红=发送源 / 蓝=中继）"
+  },
+  "secSender": {
+    "message": "发送源"
+  },
+  "secAuth": {
+    "message": "认证结果"
+  },
+  "secReceivedChain": {
+    "message": "Received 链（新→旧）"
+  },
+  "secMailInfo": {
+    "message": "邮件信息"
+  },
+  "labelRelayCount": {
+    "message": "中继数"
+  },
+  "senderNotDetected": {
+    "message": "未检测到"
+  },
+  "unknownVerdict": {
+    "message": "无法判定"
+  },
+  "noScoreFactors": {
+    "message": "无风险加分项"
+  },
+  "geoLookupFailed": {
+    "message": "GeoIP 查询失败：$DETAIL$（评分仅基于邮件头）",
+    "placeholders": {
+      "detail": {
+        "content": "$1"
+      }
+    }
+  },
+  "noReceivedHeader": {
+    "message": "无 Received 头"
+  },
+  "mapNoGeo": {
+    "message": "没有可定位的IP，无法显示地图。"
+  },
+  "mapClickHint": {
+    "message": "点击标记查看详情。"
+  },
+  "markerOrigin": {
+    "message": "发送源"
+  },
+  "markerRelay": {
+    "message": "中继"
+  },
+  "reasonHosting": {
+    "message": "托管/数据中心IP"
+  },
+  "reasonHighRiskCloud": {
+    "message": "高风险云服务商（$ORG$）",
+    "placeholders": {
+      "org": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonVpnProxy": {
+    "message": "检测到VPN/代理"
+  },
+  "reasonTor": {
+    "message": "TOR 出口节点"
+  },
+  "reasonSpf": {
+    "message": "SPF $RESULT$",
+    "placeholders": {
+      "result": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonDkimFail": {
+    "message": "DKIM 失败"
+  },
+  "reasonUnknownHost": {
+    "message": "发送主机 unknown"
+  },
+  "reasonDynamicHost": {
+    "message": "疑似动态主机名"
+  },
+  "reasonDmarcFail": {
+    "message": "DMARC 失败"
+  },
+  "reasonFromRpMismatch": {
+    "message": "From/Return-Path 域名不一致"
+  },
+  "reasonReplyToMismatch": {
+    "message": "Reply-To 与 From 不一致"
+  },
+  "reasonMsgIdMismatch": {
+    "message": "Message-ID 域名与 From 不一致"
+  },
+  "reasonDateAnomaly": {
+    "message": "Date 头异常"
+  },
+  "reasonNoReceived": {
+    "message": "无 Received 头"
+  },
+  "deductSpfPass": {
+    "message": "SPF 通过"
+  },
+  "deductDkimPass": {
+    "message": "DKIM 通过"
+  },
+  "deductDmarcPass": {
+    "message": "DMARC 通过"
+  },
+  "optTitle": {
+    "message": "Spam Trace - 统计上传设置"
+  },
+  "optServerUrl": {
+    "message": "API 服务器 URL（POST 地址）"
+  },
+  "optAutoSend": {
+    "message": "达到批量条数时自动发送"
+  },
+  "optBatchSize": {
+    "message": "批量条数"
+  },
+  "optSave": {
+    "message": "保存"
+  },
+  "optSendNow": {
+    "message": "立即发送"
+  },
+  "optExport": {
+    "message": "下载 JSON"
+  },
+  "optPending": {
+    "message": "待发送事件"
+  },
+  "optSaved": {
+    "message": "设置已保存。"
+  },
+  "optSendOk": {
+    "message": "已发送 $N$ 条。",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "optSendFail": {
+    "message": "发送失败：$DETAIL$",
+    "placeholders": {
+      "detail": {
+        "content": "$1"
+      }
+    }
+  },
+  "optNoUrl": {
+    "message": "未设置服务器 URL。"
+  },
+  "optBadUrl": {
+    "message": "URL 无效。"
+  },
+  "optPermDenied": {
+    "message": "未授予服务器访问权限。"
+  },
+  "reasonLinkTextSpoof": {
+    "message": "链接文字与实际URL不一致（伪装链接）"
+  },
+  "reasonIpLink": {
+    "message": "IP直链"
+  },
+  "reasonPunycode": {
+    "message": "Punycode域名链接"
+  },
+  "reasonShortener": {
+    "message": "短链接"
+  },
+  "reasonAllLinksMismatch": {
+    "message": "所有链接与发件人域名不一致"
+  },
+  "phishingWarning": {
+    "message": "疑似钓鱼：检测到伪装/可疑链接"
+  },
+  "reasonBrandSpoof": {
+    "message": "品牌冒充：自称$BRAND$但来自无关域名",
+    "placeholders": {
+      "brand": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonBrandAuthFail": {
+    "message": "自称$BRAND$但认证失败",
+    "placeholders": {
+      "brand": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonBrandUnverified": {
+    "message": "$BRAND$域名但无认证结果（无法验证）",
+    "placeholders": {
+      "brand": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonNewCountry": {
+    "message": "$DOMAIN$首次出现的发送国家",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonNewAsn": {
+    "message": "$DOMAIN$首次出现的ASN",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "optBrands": {
+    "message": "自定义品牌（JSON）"
+  },
+  "optBrandsHelp": {
+    "message": "格式：[{\"name\":\"...\",\"patterns\":[\"...\"],\"domains\":[\"...\"]}]"
+  },
+  "optBadBrands": {
+    "message": "自定义品牌JSON无效。"
+  },
+  "reasonBrandMention": {
+    "message": "提及$BRAND$但来自其他域名（弱信号）",
+    "placeholders": {
+      "brand": {
+        "content": "$1"
+      }
+    }
+  },
+  "optTrusted": {
+    "message": "信任域名（不告警）"
+  },
+  "optTrustedHelp": {
+    "message": "每行一个域名"
+  },
+  "deductSameDomainRoute": {
+    "message": "仅经由发件人自身域名直接投递"
+  },
+  "deductTrustedHost": {
+    "message": "可信邮件投递平台（已认证）"
+  },
+  "feedbackPrompt": {
+    "message": "您的判定："
+  },
+  "feedbackSpam": {
+    "message": "垃圾"
+  },
+  "feedbackHam": {
+    "message": "正常"
+  },
+  "feedbackSpamDone": {
+    "message": "已学习为垃圾邮件。"
+  },
+  "feedbackHamDone": {
+    "message": "已学习为正常邮件。"
+  },
+  "reasonLearnedSignals": {
+    "message": "学习到的信号倾向"
+  },
+  "reasonLearnedDomain": {
+    "message": "$DOMAIN$ 的学习信誉",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonLearnedAsn": {
+    "message": "$ASN$ 的学习信誉",
+    "placeholders": {
+      "asn": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLearnExport": {
+    "message": "导出学习数据"
+  },
+  "optLearnReset": {
+    "message": "重置学习"
+  },
+  "optLearnResetDone": {
+    "message": "学习数据已清除。"
+  },
+  "feedbackReportSpam": {
+    "message": "可疑邮件"
+  },
+  "feedbackReported": {
+    "message": "可疑 ✓（撤销）"
+  },
+  "feedbackReportedDone": {
+    "message": "已举报为垃圾邮件并学习。"
+  },
+  "feedbackUnreportedDone": {
+    "message": "已撤销垃圾举报。"
+  },
+  "reasonReportedDomain": {
+    "message": "$DOMAIN$ 的举报垃圾信誉",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonReportedAsn": {
+    "message": "$ASN$ 的举报垃圾信誉",
+    "placeholders": {
+      "asn": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonReportedSignals": {
+    "message": "举报垃圾的特征"
+  },
+  "optAlertThreshold": {
+    "message": "显示警报窗口的分数下限"
+  },
+  "optAlertThresholdHelp": {
+    "message": "0–100。设为0则每封都提示。留空用默认值。"
+  },
+  "feedbackJunkFailed": {
+    "message": "无法在Thunderbird中标记为垃圾邮件"
+  },
+  "feedbackLegit": {
+    "message": "正常邮件"
+  },
+  "feedbackLegitMarked": {
+    "message": "正常 ✓（撤销）"
+  },
+  "feedbackLegitDone": {
+    "message": "已标记为正常并学习。"
+  },
+  "reasonLegitDomain": {
+    "message": "$DOMAIN$ 的正常学习信誉",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonLegitAsn": {
+    "message": "$ASN$ 的正常学习信誉",
+    "placeholders": {
+      "asn": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMapCenter": {
+    "message": "地图中心（当前位置）"
+  },
+  "optMapCenterHelp": {
+    "message": "选择所在国家，或在下方输入纬度/经度（优先于国家）。留空为自动。"
+  },
+  "optGeoProvider": {
+    "message": "在线 IP 位置查询"
+  },
+  "optGeoProviderHelp": {
+    "message": "仅为地理定位将邮件头中的 IP 地址发送到所选提供商。选择“关闭”则不进行外部查询。未来版本将默认使用本地离线数据库。"
+  },
+  "optTor": {
+    "message": "检查 Tor 出口节点（在线）"
+  },
+  "optTorHelp": {
+    "message": "启用后通过 HTTPS 从 check.torproject.org 下载 Tor 出口节点列表。默认关闭。"
+  },
+  "dbipAttribution": {
+    "message": "IP-国家数据来源："
+  },
+  "hopColNo": {
+    "message": "#"
+  },
+  "hopColIp": {
+    "message": "IP"
+  },
+  "hopColCountry": {
+    "message": "国家"
+  },
+  "hopColAsn": {
+    "message": "ASN"
+  },
+  "welcomeTitle": {
+    "message": "Spam Trace 已安装"
+  },
+  "welcomeIntro": {
+    "message": "在地图上追踪垃圾邮件的来源。Spam Trace 分析邮件头以评估垃圾/钓鱼风险，显示判定理由和发送路径，默认完全离线。"
+  },
+  "welcomePrivacyHead": {
+    "message": "关于“读取邮件”权限"
+  },
+  "welcomePrivacy": {
+    "message": "对任何能读取邮件的扩展，Thunderbird 都会显示此权限。Spam Trace 分析邮件头，仅为检查链接(钓鱼判定)和计算哈希而读取正文。邮件主题和正文文本绝不存储或发送，本地仅保留哈希值。"
+  },
+  "welcomeOffline": {
+    "message": "在线查询(详细地理定位、Tor 检查、统计上传)默认关闭。在选项中启用时会分别请求权限。"
+  },
+  "welcomeOpenOptions": {
+    "message": "打开设置"
+  },
+  "welcomeTag": {
+    "message": "邮件头分析 · 默认离线"
+  },
+  "welcomeUseHead": {
+    "message": "使用方法"
+  },
+  "welcomeUse1": {
+    "message": "打开一封邮件，然后点击邮件工具栏中的 Spam Trace 按钮，即可查看风险评分、判定理由和发送路径地图。"
+  },
+  "welcomeUse2": {
+    "message": "点击“可疑邮件”(同时会设置 Thunderbird 的垃圾邮件标记)或“正常邮件”——Spam Trace 会根据你的反馈优化后续评分。"
+  },
+  "welcomeUse3": {
+    "message": "高风险邮件可自动弹出提醒窗口(阈值可在设置中调整)。"
+  },
+  "welcomeAnalyzeHead": {
+    "message": "检查内容"
+  },
+  "welcomeAnalyze": {
+    "message": "分析 Received 路径与发件人 IP/ASN/国家、SPF/DKIM/DMARC 认证、正文中的链接(比较发件域名与链接域名)以及品牌仿冒特征，汇总为 0–100 分,并附理由和路径地图。"
+  },
+  "welcomeOnlineHead": {
+    "message": "在线功能为可选"
+  },
+  "welcomeData": {
+    "message": "IP→国家使用内置的 DB-IP 数据库(CC BY 4.0);世界地图使用 Natural Earth(公有领域)。二者均内置于扩展并离线使用。界面支持英语、日语、简体中文、西班牙语、德语和法语。"
+  },
+  "optHelp": {
+    "message": "入门 / 帮助"
+  }
+}

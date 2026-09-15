@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body {
+      font-family: "Segoe UI", "Yu Gothic UI", sans-serif;
+      font-size: 13px;
+      color: #1a1a2e;
+      margin: 0;
+      padding: 14px;
+      min-width: 420px;
+    }
+    h1 { font-size: 15px; margin: 0 0 12px; }
+    .row { margin-bottom: 10px; }
+    label { display: block; color: #555; margin-bottom: 3px; }
+    input[type="text"], input[type="number"], select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 5px 7px;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+    input[type="number"] { width: 90px; }
+    .latlon { display: flex; gap: 6px; align-items: center; margin-top: 5px; }
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 5px 7px;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      font-size: 12px;
+      font-family: Consolas, monospace;
+    }
+    .check { display: flex; align-items: center; gap: 6px; }
+    .check label { margin: 0; color: #1a1a2e; }
+    .buttons { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+    button {
+      padding: 6px 14px;
+      border: 1px solid #999;
+      border-radius: 4px;
+      background: #fff;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    button.primary { background: #1a1a2e; color: #fff; border-color: #1a1a2e; }
+    #pending { color: #777; margin-top: 10px; }
+    #opt-status { margin-top: 10px; min-height: 16px; }
+    .ok { color: #2e7d32; }
+    .err { color: #b71c1c; }
+    .hint { font-size: 11px; color: #999; }
+  </style>
+</head>
+<body>
+  <h1 data-i18n="optTitle">Spam Trace - Statistics Upload Settings</h1>
+
+  <div class="row">
+    <label for="server-url" data-i18n="optServerUrl">API server URL (POST endpoint)</label>
+    <input type="text" id="server-url" placeholder="https://example.com/api/mail_events" />
+  </div>
+
+  <div class="row check">
+    <input type="checkbox" id="auto-send" />
+    <label for="auto-send" data-i18n="optAutoSend">Send automatically when batch size is reached</label>
+  </div>
+
+  <div class="row">
+    <label for="batch-size" data-i18n="optBatchSize">Batch size (events)</label>
+    <input type="number" id="batch-size" min="1" max="1000" value="20" />
+  </div>
+
+  <div class="row">
+    <label for="alert-threshold" data-i18n="optAlertThreshold">Show alert window when score is at least</label>
+    <input type="number" id="alert-threshold" min="0" max="100" />
+    <div class="hint" data-i18n="optAlertThresholdHelp">0–100. Set 0 to alert on every message. Leave blank for default.</div>
+  </div>
+
+  <div class="row">
+    <label for="geo-provider" data-i18n="optGeoProvider">Online IP location lookup</label>
+    <select id="geo-provider">
+      <option value="local">Local database, offline (DB-IP)</option>
+      <option value="ipwho.is">ipwho.is (HTTPS)</option>
+      <option value="off">Off (no online lookup)</option>
+    </select>
+    <div class="hint" data-i18n="optGeoProviderHelp">Header IP addresses are sent to the selected provider only for geolocation. Choose Off for no external lookup. A local offline database will become the default in a future version.</div>
+  </div>
+
+  <div class="row check">
+    <input type="checkbox" id="tor-enabled" />
+    <label for="tor-enabled" data-i18n="optTor">Check Tor exit nodes (online)</label>
+  </div>
+  <div class="row" style="margin-top:-4px">
+    <div class="hint" data-i18n="optTorHelp">When enabled, downloads the Tor exit-node list from check.torproject.org over HTTPS. Off by default.</div>
+  </div>
+
+  <div class="row">
+    <label for="home-country" data-i18n="optMapCenter">Map center (your location)</label>
+    <select id="home-country">
+      <option value="">Auto</option>
+      <option value="JP" data-lat="36.2" data-lon="138.25">Japan</option>
+      <option value="US" data-lat="39.5" data-lon="-98.35">United States</option>
+      <option value="GB" data-lat="54.0" data-lon="-2.0">United Kingdom</option>
+      <option value="DE" data-lat="51.0" data-lon="10.0">Germany</option>
+      <option value="FR" data-lat="46.5" data-lon="2.5">France</option>
+      <option value="IT" data-lat="42.5" data-lon="12.5">Italy</option>
+      <option value="ES" data-lat="40.0" data-lon="-3.7">Spain</option>
+      <option value="NL" data-lat="52.2" data-lon="5.3">Netherlands</option>
+      <option value="CN" data-lat="35.0" data-lon="103.0">China</option>
+      <option value="KR" data-lat="36.5" data-lon="127.8">South Korea</option>
+      <option value="TW" data-lat="23.7" data-lon="121.0">Taiwan</option>
+      <option value="HK" data-lat="22.3" data-lon="114.2">Hong Kong</option>
+      <option value="SG" data-lat="1.35" data-lon="103.8">Singapore</option>
+      <option value="IN" data-lat="22.0" data-lon="79.0">India</option>
+      <option value="AU" data-lat="-25.0" data-lon="133.0">Australia</option>
+      <option value="CA" data-lat="56.0" data-lon="-106.0">Canada</option>
+      <option value="BR" data-lat="-10.0" data-lon="-55.0">Brazil</option>
+      <option value="RU" data-lat="61.5" data-lon="105.0">Russia</option>
+    </select>
+    <div class="latlon">
+      <input type="number" id="home-lat" step="0.1" min="-90" max="90" placeholder="lat" />
+      <input type="number" id="home-lon" step="0.1" min="-180" max="180" placeholder="lon" />
+    </div>
+    <div class="hint" data-i18n="optMapCenterHelp">Choose your country, or enter latitude/longitude below (overrides the country). Blank = auto.</div>
+  </div>
+
+  <div class="row">
+    <label for="trusted-domains" data-i18n="optTrusted">Trusted domains (no alerts)</label>
+    <textarea id="trusted-domains" rows="3"></textarea>
+    <div class="hint" data-i18n="optTrustedHelp">One domain per line</div>
+  </div>
+
+  <div class="row">
+    <label for="custom-brands" data-i18n="optBrands">Custom brands (JSON)</label>
+    <textarea id="custom-brands" rows="4"></textarea>
+    <div class="hint" data-i18n="optBrandsHelp">Format: [{"name":"...","patterns":["..."],"domains":["..."]}]</div>
+  </div>
+
+  <div class="buttons">
+    <button id="save" class="primary" data-i18n="optSave">Save</button>
+    <button id="send-now" data-i18n="optSendNow">Send now</button>
+    <button id="export" data-i18n="optExport">Download JSON</button>
+    <button id="learn-export" data-i18n="optLearnExport">Export learning</button>
+    <button id="learn-reset" data-i18n="optLearnReset">Reset learning</button>
+  </div>
+
+  <div id="pending"></div>
+  <div id="opt-status"></div>
+
+  <div class="row" style="margin-top:16px;border-top:1px solid #eee;padding-top:10px;">
+    <a href="#" id="open-welcome" data-i18n="optHelp" style="color:#1565c0;text-decoration:none;">Getting started / Help</a>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="stats.js"></script>
+  <script src="learn.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,464 @@
+{
+  "extName": {
+    "message": "Spam Trace"
+  },
+  "extDescription": {
+    "message": "スパムメールの発信元を追跡して地図上に表示する。"
+  },
+  "statusAnalyzing": {
+    "message": "解析中..."
+  },
+  "statusNoMessage": {
+    "message": "メールが表示されていません。メールを開いてから実行してください。"
+  },
+  "errorGeneric": {
+    "message": "エラー: $DETAIL$",
+    "placeholders": {
+      "detail": {
+        "content": "$1"
+      }
+    }
+  },
+  "secRiskScore": {
+    "message": "リスクスコア"
+  },
+  "secRouteMap": {
+    "message": "送信経路マップ (赤=送信元 / 青=中継)"
+  },
+  "secSender": {
+    "message": "送信元"
+  },
+  "secAuth": {
+    "message": "認証結果"
+  },
+  "secReceivedChain": {
+    "message": "Receivedチェーン (新→旧)"
+  },
+  "secMailInfo": {
+    "message": "メール情報"
+  },
+  "labelRelayCount": {
+    "message": "Relay数"
+  },
+  "senderNotDetected": {
+    "message": "検出できず"
+  },
+  "unknownVerdict": {
+    "message": "判定不能"
+  },
+  "noScoreFactors": {
+    "message": "加点要素なし"
+  },
+  "geoLookupFailed": {
+    "message": "GeoIP取得失敗: $DETAIL$ (スコアはヘッダ情報のみ)",
+    "placeholders": {
+      "detail": {
+        "content": "$1"
+      }
+    }
+  },
+  "noReceivedHeader": {
+    "message": "Receivedヘッダなし"
+  },
+  "mapNoGeo": {
+    "message": "位置情報を取得できたIPがないため地図を表示できません。"
+  },
+  "mapClickHint": {
+    "message": "マーカーをクリックすると詳細を表示します。"
+  },
+  "markerOrigin": {
+    "message": "送信元"
+  },
+  "markerRelay": {
+    "message": "中継"
+  },
+  "reasonHosting": {
+    "message": "Hosting/データセンターIP"
+  },
+  "reasonHighRiskCloud": {
+    "message": "高リスククラウド ($ORG$)",
+    "placeholders": {
+      "org": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonVpnProxy": {
+    "message": "VPN/Proxy 検出"
+  },
+  "reasonTor": {
+    "message": "TOR exit node"
+  },
+  "reasonSpf": {
+    "message": "SPF $RESULT$",
+    "placeholders": {
+      "result": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonDkimFail": {
+    "message": "DKIM fail"
+  },
+  "reasonUnknownHost": {
+    "message": "送信元ホスト unknown"
+  },
+  "reasonDynamicHost": {
+    "message": "動的ホスト名らしい送信元"
+  },
+  "reasonDmarcFail": {
+    "message": "DMARC fail"
+  },
+  "reasonFromRpMismatch": {
+    "message": "From/Return-Pathドメイン不一致"
+  },
+  "reasonReplyToMismatch": {
+    "message": "Reply-ToがFromと不一致"
+  },
+  "reasonMsgIdMismatch": {
+    "message": "Message-IDドメインがFromと不一致"
+  },
+  "reasonDateAnomaly": {
+    "message": "Dateヘッダ異常"
+  },
+  "reasonNoReceived": {
+    "message": "Receivedヘッダなし"
+  },
+  "deductSpfPass": {
+    "message": "SPF pass"
+  },
+  "deductDkimPass": {
+    "message": "DKIM pass"
+  },
+  "deductDmarcPass": {
+    "message": "DMARC pass"
+  },
+  "optTitle": {
+    "message": "Spam Trace - 統計送信設定"
+  },
+  "optServerUrl": {
+    "message": "APIサーバURL (POST先)"
+  },
+  "optAutoSend": {
+    "message": "バッチ件数に達したら自動送信する"
+  },
+  "optBatchSize": {
+    "message": "バッチ件数"
+  },
+  "optSave": {
+    "message": "保存"
+  },
+  "optSendNow": {
+    "message": "今すぐ送信"
+  },
+  "optExport": {
+    "message": "JSONダウンロード"
+  },
+  "optPending": {
+    "message": "未送信イベント"
+  },
+  "optSaved": {
+    "message": "設定を保存しました。"
+  },
+  "optSendOk": {
+    "message": "$N$件送信しました。",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "optSendFail": {
+    "message": "送信失敗: $DETAIL$",
+    "placeholders": {
+      "detail": {
+        "content": "$1"
+      }
+    }
+  },
+  "optNoUrl": {
+    "message": "サーバURLが未設定です。"
+  },
+  "optBadUrl": {
+    "message": "URLが不正です。"
+  },
+  "optPermDenied": {
+    "message": "サーバへのアクセス権限が許可されませんでした。"
+  },
+  "reasonLinkTextSpoof": {
+    "message": "リンク表示と実URLの不一致 (偽装リンク)"
+  },
+  "reasonIpLink": {
+    "message": "IP直リンク"
+  },
+  "reasonPunycode": {
+    "message": "Punycodeドメインのリンク"
+  },
+  "reasonShortener": {
+    "message": "短縮URLリンク"
+  },
+  "reasonAllLinksMismatch": {
+    "message": "全リンクが送信元ドメインと不一致"
+  },
+  "phishingWarning": {
+    "message": "フィッシングの疑い: 偽装/不審リンクを検出"
+  },
+  "reasonBrandSpoof": {
+    "message": "ブランドなりすまし: $BRAND$を名乗るが無関係なドメインから送信",
+    "placeholders": {
+      "brand": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonBrandAuthFail": {
+    "message": "$BRAND$正規ドメインだが認証fail",
+    "placeholders": {
+      "brand": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonBrandUnverified": {
+    "message": "$BRAND$ドメインだが認証結果なし(検証不能)",
+    "placeholders": {
+      "brand": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonNewCountry": {
+    "message": "$DOMAIN$では初見の送信国",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonNewAsn": {
+    "message": "$DOMAIN$では初見のASN",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "optBrands": {
+    "message": "カスタムブランド (JSON)"
+  },
+  "optBrandsHelp": {
+    "message": "形式: [{\"name\":\"...\",\"patterns\":[\"...\"],\"domains\":[\"...\"]}]"
+  },
+  "optBadBrands": {
+    "message": "カスタムブランドのJSONが不正です。"
+  },
+  "reasonBrandMention": {
+    "message": "$BRAND$に言及するが別ドメインから送信 (弱シグナル)",
+    "placeholders": {
+      "brand": {
+        "content": "$1"
+      }
+    }
+  },
+  "optTrusted": {
+    "message": "信頼ドメイン (アラート除外)"
+  },
+  "optTrustedHelp": {
+    "message": "1行に1ドメイン"
+  },
+  "deductSameDomainRoute": {
+    "message": "送信ドメインのみ経由の直送"
+  },
+  "deductTrustedHost": {
+    "message": "信頼できるメール配信基盤 (認証済み)"
+  },
+  "feedbackPrompt": {
+    "message": "あなたの判定:"
+  },
+  "feedbackSpam": {
+    "message": "スパム"
+  },
+  "feedbackHam": {
+    "message": "正規"
+  },
+  "feedbackSpamDone": {
+    "message": "スパムとして学習しました。"
+  },
+  "feedbackHamDone": {
+    "message": "正規として学習しました。"
+  },
+  "reasonLearnedSignals": {
+    "message": "学習したシグナル傾向"
+  },
+  "reasonLearnedDomain": {
+    "message": "$DOMAIN$ の学習評価",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonLearnedAsn": {
+    "message": "$ASN$ の学習評価",
+    "placeholders": {
+      "asn": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLearnExport": {
+    "message": "学習データ出力"
+  },
+  "optLearnReset": {
+    "message": "学習リセット"
+  },
+  "optLearnResetDone": {
+    "message": "学習データを消去しました。"
+  },
+  "feedbackReportSpam": {
+    "message": "不審メール"
+  },
+  "feedbackReported": {
+    "message": "不審 ✓ (取消)"
+  },
+  "feedbackReportedDone": {
+    "message": "スパムとして報告・学習しました。"
+  },
+  "feedbackUnreportedDone": {
+    "message": "スパム報告を取り消しました。"
+  },
+  "reasonReportedDomain": {
+    "message": "$DOMAIN$ の報告スパム評価",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonReportedAsn": {
+    "message": "$ASN$ の報告スパム評価",
+    "placeholders": {
+      "asn": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonReportedSignals": {
+    "message": "報告スパムの傾向"
+  },
+  "optAlertThreshold": {
+    "message": "アラートウィンドウ表示条件 (スコアがこの値以上)"
+  },
+  "optAlertThresholdHelp": {
+    "message": "0〜100。0にすると全メールで表示。空欄で既定値。"
+  },
+  "feedbackJunkFailed": {
+    "message": "Thunderbirdの迷惑メールマークに失敗"
+  },
+  "feedbackLegit": {
+    "message": "正規メール"
+  },
+  "feedbackLegitMarked": {
+    "message": "正規 ✓ (取消)"
+  },
+  "feedbackLegitDone": {
+    "message": "正規として記録・学習しました。"
+  },
+  "reasonLegitDomain": {
+    "message": "$DOMAIN$ の正規学習評価",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonLegitAsn": {
+    "message": "$ASN$ の正規学習評価",
+    "placeholders": {
+      "asn": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMapCenter": {
+    "message": "地図の中心（現在地）"
+  },
+  "optMapCenterHelp": {
+    "message": "自国を選ぶか、下の緯度・経度で指定（緯度経度が優先）。空欄で自動。"
+  },
+  "optGeoProvider": {
+    "message": "オンラインIP位置情報照会"
+  },
+  "optGeoProviderHelp": {
+    "message": "ヘッダのIPアドレスを、位置情報の取得のためだけに選択したプロバイダへ送信します。外部照会しない場合は「使わない」を選択。将来はローカルの内蔵DBが既定になります。"
+  },
+  "optTor": {
+    "message": "Tor 出口ノードを判定（オンライン）"
+  },
+  "optTorHelp": {
+    "message": "有効にすると check.torproject.org から Tor 出口ノード一覧を HTTPS で取得します。既定はオフ。"
+  },
+  "dbipAttribution": {
+    "message": "IP-国データ提供:"
+  },
+  "hopColNo": {
+    "message": "#"
+  },
+  "hopColIp": {
+    "message": "IP"
+  },
+  "hopColCountry": {
+    "message": "国"
+  },
+  "hopColAsn": {
+    "message": "ASN"
+  },
+  "welcomeTitle": {
+    "message": "Spam Trace をインストールしました"
+  },
+  "welcomeIntro": {
+    "message": "スパムメールの発信元を追跡して地図上に表示する。Spam Trace はメールヘッダを解析してスパム/フィッシングのリスクを推定し、根拠と送信経路を表示します。既定は完全オフライン。"
+  },
+  "welcomePrivacyHead": {
+    "message": "「メッセージの読み取り」権限について"
+  },
+  "welcomePrivacy": {
+    "message": "この権限は、メールを読めるアドオンに対して Thunderbird が必ず表示するものです。Spam Trace はヘッダを解析し、本文はリンクの確認(フィッシング判定)とハッシュ計算のためだけに読み取ります。件名・本文の文章そのものは保存も送信もせず、端末内に残るのはハッシュのみです。"
+  },
+  "welcomeOffline": {
+    "message": "オンライン照会(詳細な位置情報・Tor判定・統計送信)は既定でオフです。オプションで有効にするとき、それぞれ個別に許可を求めます。"
+  },
+  "welcomeOpenOptions": {
+    "message": "設定を開く"
+  },
+  "welcomeTag": {
+    "message": "メールヘッダ解析・既定でオフライン"
+  },
+  "welcomeUseHead": {
+    "message": "使い方"
+  },
+  "welcomeUse1": {
+    "message": "メールを開き、メッセージのツールバーにある「Spam Trace」ボタンを押すと、リスクスコア・根拠・送信経路マップが表示されます。"
+  },
+  "welcomeUse2": {
+    "message": "「不審メール」(Thunderbird の迷惑メールマークも設定)または「正規メール」を押すと、その判定から学習して以後のスコアを調整します。"
+  },
+  "welcomeUse3": {
+    "message": "高リスクのメールでは、アラートウィンドウを自動表示できます(しきい値は設定で変更可能)。"
+  },
+  "welcomeAnalyzeHead": {
+    "message": "調べる項目"
+  },
+  "welcomeAnalyze": {
+    "message": "Received 経路と送信元 IP/ASN/国、SPF/DKIM/DMARC 認証、本文のリンク(送信元ドメインとリンク先ドメインの照合)、ブランドなりすましのパターンを調べ、0〜100 のスコアと根拠、経路マップにまとめます。"
+  },
+  "welcomeOnlineHead": {
+    "message": "オンライン機能は任意"
+  },
+  "welcomeData": {
+    "message": "IP→国の判定は同梱の DB-IP データベース(CC BY 4.0)、世界地図は Natural Earth(パブリックドメイン)を使用します。どちらもアドオンに同梱し、オフラインで動作します。UI は英語・日本語・中国語(簡体)・スペイン語・ドイツ語・フランス語に対応。"
+  },
+  "optHelp": {
+    "message": "はじめに / ヘルプ"
+  }
+}

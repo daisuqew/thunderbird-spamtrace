@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body {
+      font-family: "Segoe UI", "Yu Gothic UI", sans-serif;
+      font-size: 13px;
+      margin: 0;
+      width: 420px;
+      color: #1a1a2e;
+      background: #fafafa;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: #1a1a2e;
+      color: #fff;
+    }
+    header h1 { font-size: 14px; margin: 0; }
+    #rank-badge {
+      font-weight: bold;
+      padding: 3px 10px;
+      border-radius: 10px;
+      font-size: 12px;
+    }
+    .rank-LOW { background: #2e7d32; color: #fff; }
+    .rank-MEDIUM { background: #f9a825; color: #000; }
+    .rank-HIGH { background: #e65100; color: #fff; }
+    .rank-CRITICAL { background: #b71c1c; color: #fff; }
+    main { padding: 10px 14px; }
+    section { margin-bottom: 12px; }
+    h2 {
+      font-size: 12px;
+      color: #555;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 2px;
+      margin: 0 0 6px;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    td { padding: 2px 4px; vertical-align: top; word-break: break-all; }
+    td.k { color: #777; white-space: nowrap; width: 90px; }
+    .pass { color: #2e7d32; font-weight: bold; }
+    .fail { color: #b71c1c; font-weight: bold; }
+    .none { color: #999; }
+    #score-bar-wrap {
+      background: #e0e0e0;
+      border-radius: 6px;
+      height: 12px;
+      overflow: hidden;
+      margin: 4px 0;
+    }
+    #score-bar { height: 100%; width: 0; transition: width .3s; }
+    ul#reasons { margin: 4px 0 0; padding-left: 18px; }
+    #status { padding: 8px 14px; color: #777; }
+    .err { color: #b71c1c; }
+    #phishing-banner {
+      background: #b71c1c;
+      color: #fff;
+      font-weight: bold;
+      padding: 8px 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      word-break: break-all;
+    }
+    #received-chain {
+      font-family: Consolas, monospace;
+      font-size: 11px;
+      background: #f0f0f0;
+      padding: 6px;
+      border-radius: 4px;
+      max-height: 120px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    #map-note { font-size: 11px; margin-top: 3px; min-height: 14px; }
+    #feedback { margin-top: 8px; display: flex; align-items: center; gap: 8px; font-size: 12px; flex-wrap: wrap; }
+    /* 不審メール: 強調(赤) */
+    #fb-report {
+      padding: 3px 12px; border: 1px solid #b71c1c; border-radius: 4px;
+      background: #fff; color: #b71c1c; cursor: pointer; font-size: 12px; font-weight: bold;
+    }
+    #fb-report.active { background: #b71c1c; color: #fff; }
+    /* 正規メール: 淡色・低強調(緑系) */
+    #fb-legit {
+      padding: 3px 10px; border: 1px solid #cfe0cf; border-radius: 4px;
+      background: #f4faf4; color: #6a8f6a; cursor: pointer; font-size: 12px;
+    }
+    #fb-legit.active { background: #e3f1e3; color: #2e7d32; border-color: #9cc79c; }
+    #feedback-status { color: #1565c0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Spam Trace</h1>
+    <span id="rank-badge">-</span>
+  </header>
+  <div id="status" data-i18n="statusAnalyzing">Analyzing...</div>
+  <main id="result" hidden>
+    <div id="phishing-banner" hidden></div>
+    <section>
+      <h2 data-i18n="secRiskScore">Risk Score</h2>
+      <div><strong id="score-num">0</strong> / 100</div>
+      <div id="score-bar-wrap"><div id="score-bar"></div></div>
+      <ul id="reasons"></ul>
+      <div id="feedback">
+        <button id="fb-report" type="button" data-i18n="feedbackReportSpam">Suspicious Email</button>
+        <button id="fb-legit" type="button" data-i18n="feedbackLegit">Legitimate</button>
+        <span id="feedback-status"></span>
+      </div>
+    </section>
+    <section>
+      <h2 data-i18n="secRouteMap">Delivery Route Map (red = origin / blue = relay)</h2>
+      <div id="map" style="height: 240px; border-radius: 4px;"></div>
+      <div id="map-note" class="none"></div>
+      <div id="hop-table"></div>
+    </section>
+    <section>
+      <h2 data-i18n="secSender">Sender</h2>
+      <table>
+        <tr><td class="k">IP</td><td id="sender-ip"></td></tr>
+        <tr><td class="k">Host</td><td id="sender-host"></td></tr>
+        <tr><td class="k">Country</td><td id="country"></td></tr>
+        <tr><td class="k">ASN</td><td id="asn"></td></tr>
+        <tr><td class="k">Org/ISP</td><td id="org"></td></tr>
+        <tr><td class="k">Hosting</td><td id="hosting"></td></tr>
+        <tr><td class="k">VPN/Proxy</td><td id="proxy"></td></tr>
+        <tr><td class="k">TOR</td><td id="tor"></td></tr>
+        <tr><td class="k" data-i18n="labelRelayCount">Relays</td><td id="relay-count"></td></tr>
+      </table>
+    </section>
+    <section>
+      <h2 data-i18n="secAuth">Authentication</h2>
+      <table>
+        <tr><td class="k">SPF</td><td id="spf"></td></tr>
+        <tr><td class="k">DKIM</td><td id="dkim"></td></tr>
+        <tr><td class="k">DMARC</td><td id="dmarc"></td></tr>
+      </table>
+    </section>
+    <section>
+      <h2 data-i18n="secReceivedChain">Received Chain (newest → oldest)</h2>
+      <div id="received-chain"></div>
+    </section>
+    <section>
+      <h2 data-i18n="secMailInfo">Message Info</h2>
+      <table>
+        <tr><td class="k">Subject</td><td id="subject"></td></tr>
+        <tr><td class="k">From</td><td id="from"></td></tr>
+        <tr><td class="k">Return-Path</td><td id="return-path"></td></tr>
+        <tr><td class="k">Message-ID</td><td id="message-id"></td></tr>
+      </table>
+    </section>
+    <div id="dbip-attr" hidden style="font-size:10px;color:#999;margin-top:6px">
+      <span data-i18n="dbipAttribution">IP–country data</span>
+      <a href="https://db-ip.com" target="_blank" rel="noopener">DB-IP</a>
+    </div>
+  </main>
+  <script src="i18n.js"></script>
+  <script src="parser.js"></script>
+  <script src="links.js"></script>
+  <script src="geodata.js"></script>
+  <script src="geolocal.js"></script>
+  <script src="geo.js"></script>
+  <script src="asn.js"></script>
+  <script src="stats.js"></script>
+  <script src="brands.js"></script>
+  <script src="learn.js"></script>
+  <script src="risk.js"></script>
+  <script src="map.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

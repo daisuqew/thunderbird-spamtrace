@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: "Segoe UI","Yu Gothic UI",sans-serif; font-size: 14px; color: #1a1a2e;
+      background: #f4f6f9; margin: 0; padding: 0; line-height: 1.7; }
+    header { background: #1a1a2e; color: #fff; padding: 18px 24px; display: flex; align-items: baseline; gap: 12px; }
+    header h1 { font-size: 19px; margin: 0; }
+    header .tag { font-size: 12px; color: #9fb0d0; }
+    main { max-width: 780px; margin: 0 auto; padding: 22px 24px 48px; }
+    .lead { font-size: 15px; margin: 4px 0 18px; }
+    .card { background: #fff; border: 1px solid #e4e7ec; border-radius: 8px; padding: 14px 18px; margin: 12px 0; }
+    .card h2 { font-size: 14px; margin: 0 0 6px; color: #33415c; }
+    .card p { margin: 0; }
+    .privacy { border-left: 4px solid #2e7d32; }
+    .privacy h2 { color: #1e5e22; }
+    ol { margin: 6px 0 0; padding-left: 20px; }
+    ol li { margin: 3px 0; }
+    .muted { color: #667085; font-size: 12px; }
+    .actions { margin-top: 18px; }
+    button { padding: 9px 18px; border: 1px solid #1a1a2e; border-radius: 5px;
+      background: #1a1a2e; color: #fff; cursor: pointer; font-size: 13px; }
+    button:hover { background: #33415c; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Spam Trace</h1>
+    <span class="tag" data-i18n="welcomeTag">Email header analysis · offline by default</span>
+  </header>
+  <main>
+    <h2 style="font-size:16px;margin:6px 0 2px" data-i18n="welcomeTitle">Spam Trace is installed</h2>
+    <p class="lead" data-i18n="welcomeIntro">Spam Trace analyzes the email you are viewing and shows a spam/phishing risk score, sender route, and a map — fully offline by default.</p>
+
+    <div class="card">
+      <h2 data-i18n="welcomeUseHead">How to use</h2>
+      <ol>
+        <li data-i18n="welcomeUse1">Open a message, then click the Spam Trace button in the message toolbar to see its risk score, the reasons, and the delivery route map.</li>
+        <li data-i18n="welcomeUse2">Click “Suspicious Email” (which also sets Thunderbird’s Junk flag) or “Legitimate” — Spam Trace learns from your feedback to refine future scores.</li>
+        <li data-i18n="welcomeUse3">High-risk messages can pop up an alert window automatically (you can set the threshold in Settings).</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2 data-i18n="welcomeAnalyzeHead">What it checks</h2>
+      <p data-i18n="welcomeAnalyze">The Received route and sender IP/ASN/country, SPF/DKIM/DMARC authentication, links in the body (comparing the sender domain with link domains), and brand-impersonation patterns — summarized as a 0–100 score with the reasons and a route map.</p>
+    </div>
+
+    <div class="card privacy">
+      <h2 data-i18n="welcomePrivacyHead">About the “Read your email messages” permission</h2>
+      <p data-i18n="welcomePrivacy">Thunderbird shows this permission for any add-on that can read mail. Spam Trace analyzes the message headers, and reads the body only to check links (for phishing) and to compute a hash. Your message subject and body text are never stored or sent — only hashes are kept, on your computer.</p>
+    </div>
+
+    <div class="card">
+      <h2 data-i18n="welcomeOnlineHead">Online features are optional</h2>
+      <p data-i18n="welcomeOffline">Online lookups (detailed geolocation, Tor check, statistics upload) are OFF by default. Each asks for its own permission when you turn it on in Options.</p>
+    </div>
+
+    <p class="muted" data-i18n="welcomeData">IP-to-country uses a bundled DB-IP database (CC BY 4.0); the world map uses Natural Earth (public domain). Both are included in the add-on and used offline. The interface is available in English, Japanese, Chinese (Simplified), Spanish, German, and French.</p>
+
+    <div class="actions">
+      <button id="open-options" data-i18n="welcomeOpenOptions">Open settings</button>
+    </div>
+  </main>
+  <script src="i18n.js"></script>
+  <script src="welcome.js"></script>
+</body>
+</html>

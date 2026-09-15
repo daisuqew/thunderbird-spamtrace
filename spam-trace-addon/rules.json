@@ -1,0 +1,48 @@
+{
+  "_comment": "スコア点数と閾値の単一ソース (spec 06 / 16 / 17)。編集後はXPI再パッケージ(開発中は一時アドオンの再読み込み)で反映。",
+  "thresholds": {
+    "medium": 21,
+    "high": 51,
+    "critical": 81,
+    "alert": 51
+  },
+  "learn": {
+    "scale": 8,
+    "cap": 30,
+    "minReports": 5,
+    "domainCap": 25
+  },
+  "weights": {
+    "hosting": 20,
+    "highRiskCloud": 20,
+    "vpnProxy": 30,
+    "tor": 50,
+    "spfFail": 15,
+    "spfSoftfail": 10,
+    "dkimFail": 15,
+    "dmarcFail": 15,
+    "spfPass": -10,
+    "dkimPass": -10,
+    "dmarcPass": -15,
+    "fromRpMismatch": 10,
+    "replyToMismatch": 10,
+    "msgIdMismatch": 5,
+    "dateAnomaly": 10,
+    "noReceived": 10,
+    "linkTextSpoof": 25,
+    "ipLink": 20,
+    "punycode": 15,
+    "shortener": 10,
+    "allLinksMismatch": 10,
+    "brandSpoof": 30,
+    "brandAuthFail": 25,
+    "brandUnverified": 10,
+    "brandMention": 10,
+    "newCountry": 10,
+    "newAsn": 5,
+    "unknownHost": 10,
+    "dynamicHost": 10,
+    "sameDomainRoute": -15,
+    "trustedHost": -15
+  }
+}

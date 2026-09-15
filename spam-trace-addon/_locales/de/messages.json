@@ -1,0 +1,464 @@
+{
+  "extName": {
+    "message": "Spam Trace"
+  },
+  "extDescription": {
+    "message": "Verfolge die Herkunft von Spam-E-Mails auf einer Karte."
+  },
+  "statusAnalyzing": {
+    "message": "Analysiere..."
+  },
+  "statusNoMessage": {
+    "message": "Keine Nachricht angezeigt. Bitte zuerst eine Nachricht öffnen."
+  },
+  "errorGeneric": {
+    "message": "Fehler: $DETAIL$",
+    "placeholders": {
+      "detail": {
+        "content": "$1"
+      }
+    }
+  },
+  "secRiskScore": {
+    "message": "Risikobewertung"
+  },
+  "secRouteMap": {
+    "message": "Zustellroute (rot = Ursprung / blau = Relay)"
+  },
+  "secSender": {
+    "message": "Absender"
+  },
+  "secAuth": {
+    "message": "Authentifizierung"
+  },
+  "secReceivedChain": {
+    "message": "Received-Kette (neu → alt)"
+  },
+  "secMailInfo": {
+    "message": "Nachrichteninfo"
+  },
+  "labelRelayCount": {
+    "message": "Relays"
+  },
+  "senderNotDetected": {
+    "message": "Nicht erkannt"
+  },
+  "unknownVerdict": {
+    "message": "Unbekannt"
+  },
+  "noScoreFactors": {
+    "message": "Keine Risikofaktoren"
+  },
+  "geoLookupFailed": {
+    "message": "GeoIP-Abfrage fehlgeschlagen: $DETAIL$ (Bewertung nur aus Headern)",
+    "placeholders": {
+      "detail": {
+        "content": "$1"
+      }
+    }
+  },
+  "noReceivedHeader": {
+    "message": "Keine Received-Header"
+  },
+  "mapNoGeo": {
+    "message": "Keine IP mit Standortdaten; Karte nicht verfügbar."
+  },
+  "mapClickHint": {
+    "message": "Für Details auf einen Marker klicken."
+  },
+  "markerOrigin": {
+    "message": "Ursprung"
+  },
+  "markerRelay": {
+    "message": "Relay"
+  },
+  "reasonHosting": {
+    "message": "Hosting-/Rechenzentrums-IP"
+  },
+  "reasonHighRiskCloud": {
+    "message": "Hochrisiko-Cloud ($ORG$)",
+    "placeholders": {
+      "org": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonVpnProxy": {
+    "message": "VPN/Proxy erkannt"
+  },
+  "reasonTor": {
+    "message": "TOR-Exit-Node"
+  },
+  "reasonSpf": {
+    "message": "SPF $RESULT$",
+    "placeholders": {
+      "result": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonDkimFail": {
+    "message": "DKIM fehlgeschlagen"
+  },
+  "reasonUnknownHost": {
+    "message": "Absender-Host unbekannt"
+  },
+  "reasonDynamicHost": {
+    "message": "Dynamisch wirkender Hostname"
+  },
+  "reasonDmarcFail": {
+    "message": "DMARC fehlgeschlagen"
+  },
+  "reasonFromRpMismatch": {
+    "message": "From/Return-Path-Domains stimmen nicht überein"
+  },
+  "reasonReplyToMismatch": {
+    "message": "Reply-To weicht von From ab"
+  },
+  "reasonMsgIdMismatch": {
+    "message": "Message-ID-Domain weicht von From ab"
+  },
+  "reasonDateAnomaly": {
+    "message": "Anomalie im Date-Header"
+  },
+  "reasonNoReceived": {
+    "message": "Keine Received-Header"
+  },
+  "deductSpfPass": {
+    "message": "SPF pass"
+  },
+  "deductDkimPass": {
+    "message": "DKIM pass"
+  },
+  "deductDmarcPass": {
+    "message": "DMARC pass"
+  },
+  "optTitle": {
+    "message": "Spam Trace - Einstellungen für Statistik-Upload"
+  },
+  "optServerUrl": {
+    "message": "API-Server-URL (POST-Endpunkt)"
+  },
+  "optAutoSend": {
+    "message": "Automatisch senden, wenn die Batchgröße erreicht ist"
+  },
+  "optBatchSize": {
+    "message": "Batchgröße (Ereignisse)"
+  },
+  "optSave": {
+    "message": "Speichern"
+  },
+  "optSendNow": {
+    "message": "Jetzt senden"
+  },
+  "optExport": {
+    "message": "JSON herunterladen"
+  },
+  "optPending": {
+    "message": "Ausstehende Ereignisse"
+  },
+  "optSaved": {
+    "message": "Einstellungen gespeichert."
+  },
+  "optSendOk": {
+    "message": "$N$ Ereignisse gesendet.",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "optSendFail": {
+    "message": "Senden fehlgeschlagen: $DETAIL$",
+    "placeholders": {
+      "detail": {
+        "content": "$1"
+      }
+    }
+  },
+  "optNoUrl": {
+    "message": "Server-URL ist nicht gesetzt."
+  },
+  "optBadUrl": {
+    "message": "Ungültige URL."
+  },
+  "optPermDenied": {
+    "message": "Berechtigung für den Server wurde nicht erteilt."
+  },
+  "reasonLinkTextSpoof": {
+    "message": "Linktext und URL stimmen nicht überein (gefälschter Link)"
+  },
+  "reasonIpLink": {
+    "message": "Direkter IP-Link"
+  },
+  "reasonPunycode": {
+    "message": "Punycode-Domain-Link"
+  },
+  "reasonShortener": {
+    "message": "Kurz-URL-Link"
+  },
+  "reasonAllLinksMismatch": {
+    "message": "Alle Links weichen von der Absender-Domain ab"
+  },
+  "phishingWarning": {
+    "message": "Phishing-Verdacht: gefälschte/verdächtige Links erkannt"
+  },
+  "reasonBrandSpoof": {
+    "message": "Markenimitation: gibt sich als $BRAND$ aus, aber von fremder Domain gesendet",
+    "placeholders": {
+      "brand": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonBrandAuthFail": {
+    "message": "Gibt sich als $BRAND$ aus, Authentifizierung fehlgeschlagen",
+    "placeholders": {
+      "brand": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonBrandUnverified": {
+    "message": "$BRAND$-Domain, aber Authentifizierung nicht überprüfbar",
+    "placeholders": {
+      "brand": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonNewCountry": {
+    "message": "Erstmals gesehenes Absenderland für $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonNewAsn": {
+    "message": "Erstmals gesehene ASN für $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "optBrands": {
+    "message": "Eigene Marken (JSON)"
+  },
+  "optBrandsHelp": {
+    "message": "Format: [{\"name\":\"...\",\"patterns\":[\"...\"],\"domains\":[\"...\"]}]"
+  },
+  "optBadBrands": {
+    "message": "Ungültiges JSON für eigene Marken."
+  },
+  "reasonBrandMention": {
+    "message": "Erwähnt $BRAND$, aber von anderer Domain gesendet (schwaches Signal)",
+    "placeholders": {
+      "brand": {
+        "content": "$1"
+      }
+    }
+  },
+  "optTrusted": {
+    "message": "Vertrauenswürdige Domains (keine Warnungen)"
+  },
+  "optTrustedHelp": {
+    "message": "Eine Domain pro Zeile"
+  },
+  "deductSameDomainRoute": {
+    "message": "Direkte Zustellung nur über die Absender-Domain"
+  },
+  "deductTrustedHost": {
+    "message": "Vertrauenswürdige E-Mail-Versandplattform (authentifiziert)"
+  },
+  "feedbackPrompt": {
+    "message": "Ihr Urteil:"
+  },
+  "feedbackSpam": {
+    "message": "Spam"
+  },
+  "feedbackHam": {
+    "message": "Legitim"
+  },
+  "feedbackSpamDone": {
+    "message": "Als Spam gelernt."
+  },
+  "feedbackHamDone": {
+    "message": "Als legitim gelernt."
+  },
+  "reasonLearnedSignals": {
+    "message": "Gelerntes Signalmuster"
+  },
+  "reasonLearnedDomain": {
+    "message": "Gelernte Reputation für $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonLearnedAsn": {
+    "message": "Gelernte Reputation für $ASN$",
+    "placeholders": {
+      "asn": {
+        "content": "$1"
+      }
+    }
+  },
+  "optLearnExport": {
+    "message": "Lernen exportieren"
+  },
+  "optLearnReset": {
+    "message": "Lernen zurücksetzen"
+  },
+  "optLearnResetDone": {
+    "message": "Lerndaten gelöscht."
+  },
+  "feedbackReportSpam": {
+    "message": "Verdächtige E-Mail"
+  },
+  "feedbackReported": {
+    "message": "Verdächtig ✓ (rückgängig)"
+  },
+  "feedbackReportedDone": {
+    "message": "Als Spam gemeldet und gelernt."
+  },
+  "feedbackUnreportedDone": {
+    "message": "Spam-Meldung zurückgezogen."
+  },
+  "reasonReportedDomain": {
+    "message": "Reputation gemeldeten Spams für $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonReportedAsn": {
+    "message": "Reputation gemeldeten Spams für $ASN$",
+    "placeholders": {
+      "asn": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonReportedSignals": {
+    "message": "Muster gemeldeten Spams"
+  },
+  "optAlertThreshold": {
+    "message": "Warnfenster anzeigen ab Bewertung"
+  },
+  "optAlertThresholdHelp": {
+    "message": "0–100. 0 = bei jeder Nachricht. Leer = Standardwert."
+  },
+  "feedbackJunkFailed": {
+    "message": "Konnte in Thunderbird nicht als Junk markieren"
+  },
+  "feedbackLegit": {
+    "message": "Legitim"
+  },
+  "feedbackLegitMarked": {
+    "message": "Legitim ✓ (rückgängig)"
+  },
+  "feedbackLegitDone": {
+    "message": "Als legitim markiert und gelernt."
+  },
+  "reasonLegitDomain": {
+    "message": "Als-legitim-Reputation für $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "reasonLegitAsn": {
+    "message": "Als-legitim-Reputation für $ASN$",
+    "placeholders": {
+      "asn": {
+        "content": "$1"
+      }
+    }
+  },
+  "optMapCenter": {
+    "message": "Kartenmittelpunkt (Ihr Standort)"
+  },
+  "optMapCenterHelp": {
+    "message": "Wählen Sie Ihr Land oder geben Sie unten Breite/Länge ein (hat Vorrang). Leer = automatisch."
+  },
+  "optGeoProvider": {
+    "message": "Online-IP-Standortabfrage"
+  },
+  "optGeoProviderHelp": {
+    "message": "IP-Adressen aus den Kopfzeilen werden nur zur Geolokalisierung an den gewählten Anbieter gesendet. Wählen Sie „Aus“ für keine externe Abfrage. Eine lokale Offline-Datenbank wird in einer künftigen Version zum Standard."
+  },
+  "optTor": {
+    "message": "Tor-Exit-Knoten prüfen (online)"
+  },
+  "optTorHelp": {
+    "message": "Wenn aktiviert, wird die Tor-Exit-Knoten-Liste von check.torproject.org über HTTPS geladen. Standardmäßig aus."
+  },
+  "dbipAttribution": {
+    "message": "IP-Land-Daten von"
+  },
+  "hopColNo": {
+    "message": "#"
+  },
+  "hopColIp": {
+    "message": "IP"
+  },
+  "hopColCountry": {
+    "message": "Land"
+  },
+  "hopColAsn": {
+    "message": "ASN"
+  },
+  "welcomeTitle": {
+    "message": "Spam Trace ist installiert"
+  },
+  "welcomeIntro": {
+    "message": "Verfolge die Herkunft von Spam-E-Mails auf einer Karte. Spam Trace analysiert die Kopfzeilen, schätzt das Spam-/Phishing-Risiko und zeigt Gründe und Zustellroute – standardmäßig offline."
+  },
+  "welcomePrivacyHead": {
+    "message": "Zur Berechtigung „E-Mails lesen“"
+  },
+  "welcomePrivacy": {
+    "message": "Thunderbird zeigt diese Berechtigung für jedes Add-on, das E-Mails lesen kann. Spam Trace analysiert die Kopfzeilen und liest den Textkörper nur, um Links zu prüfen (Phishing) und einen Hash zu berechnen. Betreff und Nachrichtentext werden nie gespeichert oder gesendet – lokal bleiben nur Hashes."
+  },
+  "welcomeOffline": {
+    "message": "Online-Abfragen (detaillierte Geolokalisierung, Tor-Prüfung, Statistik-Upload) sind standardmäßig aus. Jede fragt beim Aktivieren in den Optionen ihre eigene Berechtigung ab."
+  },
+  "welcomeOpenOptions": {
+    "message": "Einstellungen öffnen"
+  },
+  "welcomeTag": {
+    "message": "E-Mail-Header-Analyse · standardmäßig offline"
+  },
+  "welcomeUseHead": {
+    "message": "Verwendung"
+  },
+  "welcomeUse1": {
+    "message": "Öffnen Sie eine Nachricht und klicken Sie in der Nachrichten-Symbolleiste auf die Schaltfläche Spam Trace, um Risikobewertung, Gründe und die Zustellroute zu sehen."
+  },
+  "welcomeUse2": {
+    "message": "Klicken Sie auf „Verdächtige E-Mail“ (setzt auch die Junk-Markierung) oder „Legitim“ – Spam Trace lernt aus Ihrem Feedback und verfeinert künftige Bewertungen."
+  },
+  "welcomeUse3": {
+    "message": "Bei risikoreichen Nachrichten kann automatisch ein Warnfenster erscheinen (Schwelle in den Einstellungen)."
+  },
+  "welcomeAnalyzeHead": {
+    "message": "Was geprüft wird"
+  },
+  "welcomeAnalyze": {
+    "message": "Die Received-Route und Absender-IP/ASN/Land, SPF/DKIM/DMARC-Authentifizierung, Links im Text (Absender- vs. Link-Domain) und Muster von Markenimitation – zusammengefasst als 0–100-Bewertung mit Gründen und Routenkarte."
+  },
+  "welcomeOnlineHead": {
+    "message": "Online-Funktionen sind optional"
+  },
+  "welcomeData": {
+    "message": "IP-zu-Land nutzt eine mitgelieferte DB-IP-Datenbank (CC BY 4.0); die Weltkarte nutzt Natural Earth (gemeinfrei). Beide sind im Add-on enthalten und werden offline verwendet. Die Oberfläche gibt es auf Englisch, Japanisch, Chinesisch (vereinfacht), Spanisch, Deutsch und Französisch."
+  },
+  "optHelp": {
+    "message": "Erste Schritte / Hilfe"
+  }
+}

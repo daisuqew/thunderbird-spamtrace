@@ -1,0 +1,22 @@
+# --- Build artifacts (packaged add-ons; distribute via ATN / GitHub Releases) ---
+*.xpi
+
+# --- Markdown docs are kept internal; the repo ships a plain-text README.txt only ---
+# (MEMORY log, RELEASE_PREP, ATN_SUBMISSION, and spam_trace_specs/*.md are all excluded)
+*.md
+
+# --- Raw source data (see README "Obtaining the source data"); regenerate data/ from these ---
+*.csv.gz
+ne_*.zip
+
+# --- Local working / archive folders ---
+ver_ATN/
+ver_dev/
+zi9oqiBZ
+map-test.html
+
+# --- OS / editor junk ---
+*.lnk
+.DS_Store
+Thumbs.db
+desktop.ini
