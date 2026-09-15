@@ -116,7 +116,7 @@ REPOSITORY LAYOUT
 LICENSE
 -------
 
-- Extension code: to be set by the author (e.g., MPL-2.0 / MIT / GPL-3.0).
+- Extension code: Mozilla Public License 2.0 (MPL-2.0). See the LICENSE file.
 - Bundled data keeps its own license: DB-IP Lite (CC BY 4.0), Natural Earth (public domain) -
   see Attribution above.
 
