@@ -1,0 +1,530 @@
+diff --git a/spam-trace-addon/_locales/zh_TW/messages.json b/spam-trace-addon/_locales/zh_TW/messages.json
+new file mode 100644
+index 0000000..bb9517a
+--- /dev/null
++++ b/spam-trace-addon/_locales/zh_TW/messages.json
+@@ -0,0 +1,511 @@
++{
++  "extName": {
++    "message": "Spam Trace"
++  },
++  "extDescription": {
++    "message": "在地圖上追蹤垃圾郵件的來源。"
++  },
++  "statusAnalyzing": {
++    "message": "分析中..."
++  },
++  "statusNoMessage": {
++    "message": "未顯示郵件。請先開啟一封郵件再試。"
++  },
++  "errorGeneric": {
++    "message": "錯誤：$DETAIL$",
++    "placeholders": {
++      "detail": {
++        "content": "$1"
++      }
++    }
++  },
++  "secRiskScore": {
++    "message": "風險評分"
++  },
++  "secRouteMap": {
++    "message": "傳輸路徑地圖（紅=寄件來源 / 藍=中繼）"
++  },
++  "secSender": {
++    "message": "寄件來源"
++  },
++  "secAuth": {
++    "message": "認證結果"
++  },
++  "secReceivedChain": {
++    "message": "Received 鏈（新→舊）"
++  },
++  "secMailInfo": {
++    "message": "郵件資訊"
++  },
++  "labelRelayCount": {
++    "message": "中繼數"
++  },
++  "senderNotDetected": {
++    "message": "未檢測到"
++  },
++  "unknownVerdict": {
++    "message": "無法判定"
++  },
++  "noScoreFactors": {
++    "message": "無風險加分項"
++  },
++  "geoLookupFailed": {
++    "message": "GeoIP 查詢失敗：$DETAIL$（評分僅基於郵件標頭）",
++    "placeholders": {
++      "detail": {
++        "content": "$1"
++      }
++    }
++  },
++  "noReceivedHeader": {
++    "message": "無 Received 標頭"
++  },
++  "mapNoGeo": {
++    "message": "沒有可定位的IP，無法顯示地圖。"
++  },
++  "mapClickHint": {
++    "message": "點選標記檢視詳情。"
++  },
++  "markerOrigin": {
++    "message": "寄件來源"
++  },
++  "markerRelay": {
++    "message": "中繼"
++  },
++  "reasonHosting": {
++    "message": "託管/資料中心IP"
++  },
++  "reasonHighRiskCloud": {
++    "message": "高風險雲服務商（$ORG$）",
++    "placeholders": {
++      "org": {
++        "content": "$1"
++      }
++    }
++  },
++  "reasonVpnProxy": {
++    "message": "檢測到VPN/代理"
++  },
++  "reasonTor": {
++    "message": "TOR 出口節點"
++  },
++  "reasonSpf": {
++    "message": "SPF $RESULT$",
++    "placeholders": {
++      "result": {
++        "content": "$1"
++      }
++    }
++  },
++  "reasonDkimFail": {
++    "message": "DKIM 失敗"
++  },
++  "reasonUnknownHost": {
++    "message": "傳送主機 unknown"
++  },
++  "reasonDynamicHost": {
++    "message": "疑似動態主機名"
++  },
++  "reasonDmarcFail": {
++    "message": "DMARC 失敗"
++  },
++  "reasonFromRpMismatch": {
++    "message": "From/Return-Path 網域不一致"
++  },
++  "reasonReplyToMismatch": {
++    "message": "Reply-To 與 From 不一致"
++  },
++  "reasonMsgIdMismatch": {
++    "message": "Message-ID 網域與 From 不一致"
++  },
++  "reasonDateAnomaly": {
++    "message": "Date 標頭異常"
++  },
++  "reasonNoReceived": {
++    "message": "無 Received 標頭"
++  },
++  "deductSpfPass": {
++    "message": "SPF 通過"
++  },
++  "deductDkimPass": {
++    "message": "DKIM 通過"
++  },
++  "deductDmarcPass": {
++    "message": "DMARC 通過"
++  },
++  "optTitle": {
++    "message": "Spam Trace - 統計上傳設定"
++  },
++  "optServerUrl": {
++    "message": "API 伺服器 URL（POST 位址）"
++  },
++  "optAutoSend": {
++    "message": "達到批次筆數時自動傳送"
++  },
++  "optBatchSize": {
++    "message": "批次筆數"
++  },
++  "optSave": {
++    "message": "儲存"
++  },
++  "optSendNow": {
++    "message": "立即傳送"
++  },
++  "optExport": {
++    "message": "下載 JSON"
++  },
++  "optPending": {
++    "message": "待發送事件"
++  },
++  "optSaved": {
++    "message": "設定已儲存。"
++  },
++  "optSendOk": {
++    "message": "已傳送 $N$ 筆。",
++    "placeholders": {
++      "n": {
++        "content": "$1"
++      }
++    }
++  },
++  "optSendFail": {
++    "message": "傳送失敗：$DETAIL$",
++    "placeholders": {
++      "detail": {
++        "content": "$1"
++      }
++    }
++  },
++  "optNoUrl": {
++    "message": "未設定伺服器 URL。"
++  },
++  "optBadUrl": {
++    "message": "URL 無效。"
++  },
++  "optPermDenied": {
++    "message": "未授予伺服器存取權限。"
++  },
++  "reasonLinkTextSpoof": {
++    "message": "連結文字與實際URL不一致（偽裝連結）"
++  },
++  "reasonIpLink": {
++    "message": "IP 直接連結"
++  },
++  "reasonPunycode": {
++    "message": "Punycode 網域連結"
++  },
++  "reasonShortener": {
++    "message": "短網址"
++  },
++  "reasonAllLinksMismatch": {
++    "message": "所有連結與寄件者網域不一致"
++  },
++  "phishingWarning": {
++    "message": "疑似釣魚：檢測到偽裝/可疑連結"
++  },
++  "reasonBrandSpoof": {
++    "message": "品牌冒充：自稱$BRAND$但來自無關網域",
++    "placeholders": {
++      "brand": {
++        "content": "$1"
++      }
++    }
++  },
++  "reasonBrandAuthFail": {
++    "message": "自稱$BRAND$但認證失敗",
++    "placeholders": {
++      "brand": {
++        "content": "$1"
++      }
++    }
++  },
++  "reasonBrandUnverified": {
++    "message": "$BRAND$網域但無認證結果（無法驗證）",
++    "placeholders": {
++      "brand": {
++        "content": "$1"
++      }
++    }
++  },
++  "reasonNewCountry": {
++    "message": "$DOMAIN$首次出現的傳送國家",
++    "placeholders": {
++      "domain": {
++        "content": "$1"
++      }
++    }
++  },
++  "reasonNewAsn": {
++    "message": "$DOMAIN$首次出現的ASN",
++    "placeholders": {
++      "domain": {
++        "content": "$1"
++      }
++    }
++  },
++  "optBrands": {
++    "message": "自訂品牌（JSON）"
++  },
++  "optBrandsHelp": {
++    "message": "格式：[{\"name\":\"...\",\"patterns\":[\"...\"],\"domains\":[\"...\"]}]"
++  },
++  "optBadBrands": {
++    "message": "自訂品牌JSON無效。"
++  },
++  "reasonBrandMention": {
++    "message": "提及$BRAND$但來自其他網域（弱訊號）",
++    "placeholders": {
++      "brand": {
++        "content": "$1"
++      }
++    }
++  },
++  "optTrusted": {
++    "message": "信任網域（不發出警示）"
++  },
++  "optTrustedHelp": {
++    "message": "每行一個網域"
++  },
++  "deductSameDomainRoute": {
++    "message": "僅經由寄件者自身網域直接投遞"
++  },
++  "deductTrustedHost": {
++    "message": "可信郵件投遞平臺（已認證）"
++  },
++  "feedbackPrompt": {
++    "message": "您的判定："
++  },
++  "feedbackSpam": {
++    "message": "垃圾"
++  },
++  "feedbackHam": {
++    "message": "正常"
++  },
++  "feedbackSpamDone": {
++    "message": "已學習為垃圾郵件。"
++  },
++  "feedbackHamDone": {
++    "message": "已學習為正常郵件。"
++  },
++  "reasonLearnedSignals": {
++    "message": "學習到的訊號傾向"
++  },
++  "reasonLearnedDomain": {
++    "message": "$DOMAIN$ 的學習信譽",
++    "placeholders": {
++      "domain": {
++        "content": "$1"
++      }
++    }
++  },
++  "reasonLearnedAsn": {
++    "message": "$ASN$ 的學習信譽",
++    "placeholders": {
++      "asn": {
++        "content": "$1"
++      }
++    }
++  },
++  "optLearnExport": {
++    "message": "匯出學習資料"
++  },
++  "optLearnReset": {
++    "message": "重設學習"
++  },
++  "optLearnResetDone": {
++    "message": "學習資料已清除。"
++  },
++  "feedbackReportSpam": {
++    "message": "可疑郵件"
++  },
++  "feedbackReported": {
++    "message": "可疑 ✓（撤銷）"
++  },
++  "feedbackReportedDone": {
++    "message": "已檢舉為垃圾郵件並學習。"
++  },
++  "feedbackUnreportedDone": {
++    "message": "已撤銷垃圾檢舉。"
++  },
++  "reasonReportedDomain": {
++    "message": "$DOMAIN$ 的檢舉垃圾信譽",
++    "placeholders": {
++      "domain": {
++        "content": "$1"
++      }
++    }
++  },
++  "reasonReportedAsn": {
++    "message": "$ASN$ 的檢舉垃圾信譽",
++    "placeholders": {
++      "asn": {
++        "content": "$1"
++      }
++    }
++  },
++  "reasonReportedSignals": {
++    "message": "檢舉垃圾的特徵"
++  },
++  "optAlertThreshold": {
++    "message": "顯示警報視窗的分數下限"
++  },
++  "optAlertThresholdHelp": {
++    "message": "0–100。設為0則每封都提示。留空用預設值。"
++  },
++  "feedbackJunkFailed": {
++    "message": "無法在Thunderbird中標記為垃圾郵件"
++  },
++  "feedbackLegit": {
++    "message": "正常郵件"
++  },
++  "feedbackLegitMarked": {
++    "message": "正常 ✓（撤銷）"
++  },
++  "feedbackLegitDone": {
++    "message": "已標記為正常並學習。"
++  },
++  "reasonLegitDomain": {
++    "message": "$DOMAIN$ 的正常學習信譽",
++    "placeholders": {
++      "domain": {
++        "content": "$1"
++      }
++    }
++  },
++  "reasonLegitAsn": {
++    "message": "$ASN$ 的正常學習信譽",
++    "placeholders": {
++      "asn": {
++        "content": "$1"
++      }
++    }
++  },
++  "optMapCenter": {
++    "message": "地圖中心（目前位置）"
++  },
++  "optMapCenterHelp": {
++    "message": "選擇所在國家，或在下方輸入緯度/經度（優先於國家）。留空為自動。"
++  },
++  "optGeoProvider": {
++    "message": "線上 IP 位置查詢"
++  },
++  "optGeoProviderHelp": {
++    "message": "僅為地理定位將郵件標頭中的 IP 位址傳送到所選提供商。選擇“關閉”則不進行外部查詢。未來版本將預設使用本地離線資料庫。"
++  },
++  "optTor": {
++    "message": "檢查 Tor 出口節點（線上）"
++  },
++  "optTorHelp": {
++    "message": "啟用後通過 HTTPS 從 check.torproject.org 下載 Tor 出口節點清單。預設關閉。"
++  },
++  "dbipAttribution": {
++    "message": "IP-國家資料來源："
++  },
++  "hopColNo": {
++    "message": "#"
++  },
++  "hopColIp": {
++    "message": "IP"
++  },
++  "hopColCountry": {
++    "message": "國家"
++  },
++  "hopColAsn": {
++    "message": "ASN"
++  },
++  "welcomeTitle": {
++    "message": "Spam Trace 已安裝"
++  },
++  "welcomeIntro": {
++    "message": "在地圖上追蹤垃圾郵件的來源。Spam Trace 分析郵件標頭以評估垃圾/釣魚風險，顯示判定理由和傳送路徑，預設完全離線。"
++  },
++  "welcomePrivacyHead": {
++    "message": "關於“讀取郵件”權限"
++  },
++  "welcomePrivacy": {
++    "message": "對任何能讀取郵件的擴充套件，Thunderbird 都會顯示此權限。Spam Trace 分析郵件標頭，僅為檢查連結(釣魚判定)和計算雜湊而讀取正文。郵件主題和正文文字絕不儲存或傳送，本地僅保留雜湊值。"
++  },
++  "welcomeOffline": {
++    "message": "線上查詢(詳細地理定位、Tor 檢查、統計上傳)預設關閉。在選項中啟用時會分別請求權限。"
++  },
++  "welcomeOpenOptions": {
++    "message": "開啟設定"
++  },
++  "welcomeTag": {
++    "message": "郵件標頭分析 · 預設離線"
++  },
++  "welcomeUseHead": {
++    "message": "使用方法"
++  },
++  "welcomeUse1": {
++    "message": "開啟一封郵件，然後點選郵件工具列中的 Spam Trace 按鈕，即可檢視風險評分、判定理由和傳送路徑地圖。"
++  },
++  "welcomeUse2": {
++    "message": "點選“可疑郵件”(同時會設定 Thunderbird 的垃圾郵件標記)或“正常郵件”——Spam Trace 會根據你的回饋最佳化後續評分。"
++  },
++  "welcomeUse3": {
++    "message": "高風險郵件可自動彈出提醒視窗(門檻可在設定中調整)。"
++  },
++  "welcomeAnalyzeHead": {
++    "message": "檢查內容"
++  },
++  "welcomeAnalyze": {
++    "message": "分析 Received 路徑與寄件者 IP/ASN/國家、SPF/DKIM/DMARC 認證、正文中的連結(比較寄件網域與連結網域)以及品牌仿冒特徵，彙總為 0–100 分,並附理由和路徑地圖。"
++  },
++  "welcomeOnlineHead": {
++    "message": "線上功能為可選"
++  },
++  "welcomeData": {
++    "message": "IP→國家使用內建的 DB-IP 資料庫(CC BY 4.0);世界地圖使用 Natural Earth(公有領域)。二者均內置於擴充套件並離線使用。介面支援英語、日語、簡體中文、繁體中文、西班牙語、德語和法語。"
++  },
++  "optHelp": {
++    "message": "入門 / 幫助"
++  },
++  "labelSenderTrust": {
++    "message": "可信度"
++  },
++  "trustVerifiedAuto": {
++    "message": "已確認（接收伺服器記錄，自動判定）"
++  },
++  "trustVerifiedManual": {
++    "message": "已確認（接收伺服器記錄，已設定的伺服器）"
++  },
++  "trustEstimated": {
++    "message": "推測（未找到信任邊界）"
++  },
++  "chainUnverifiedTag": {
++    "message": "（未驗證）"
++  },
++  "markerUnverified": {
++    "message": "未驗證"
++  },
++  "hopColTrust": {
++    "message": "可信度"
++  },
++  "hopVerified": {
++    "message": "已確認"
++  },
++  "hopUnverified": {
++    "message": "未驗證"
++  },
++  "reasonForgedReceived": {
++    "message": "疑似偽造的 Received 標頭: $DETAIL$",
++    "placeholders": {
++      "detail": {
++        "content": "$1"
++      }
++    }
++  },
++  "forgedTimeReversal": {
++    "message": "時間倒序"
++  },
++  "forgedSelfClaim": {
++    "message": "冒充自家伺服器的標頭（經轉發或郵寄清單的郵件可能誤報）"
++  },
++  "optTrustedServers": {
++    "message": "受信任的接收伺服器"
++  },
++  "optTrustedServersHelp": {
++    "message": "每行一個主機名或網域（例: mx.example.com、google.com）。留空則自動判定"
++  }
++}
+diff --git a/spam-trace-addon/manifest.json b/spam-trace-addon/manifest.json
+index 6e80dc4..9572033 100644
+--- a/spam-trace-addon/manifest.json
++++ b/spam-trace-addon/manifest.json
+@@ -1,7 +1,7 @@
+ {
+   "manifest_version": 2,
+   "name": "__MSG_extName__",
+-  "version": "1.1.1",
++  "version": "1.1.2",
+   "description": "__MSG_extDescription__",
+   "author": "Dais Watan",
+   "default_locale": "en",
