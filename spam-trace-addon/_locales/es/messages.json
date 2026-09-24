@@ -460,5 +460,52 @@
   },
   "optHelp": {
     "message": "Introducción / Ayuda"
+  },
+  "labelSenderTrust": {
+    "message": "Fiabilidad"
+  },
+  "trustVerifiedAuto": {
+    "message": "Verificado (registro del servidor receptor, detección automática)"
+  },
+  "trustVerifiedManual": {
+    "message": "Verificado (registro del servidor receptor, sus servidores)"
+  },
+  "trustEstimated": {
+    "message": "Estimado (no se encontró el límite de confianza)"
+  },
+  "chainUnverifiedTag": {
+    "message": "(no verificado)"
+  },
+  "markerUnverified": {
+    "message": "No verificado"
+  },
+  "hopColTrust": {
+    "message": "Fiabilidad"
+  },
+  "hopVerified": {
+    "message": "Verificado"
+  },
+  "hopUnverified": {
+    "message": "No verificado"
+  },
+  "reasonForgedReceived": {
+    "message": "Posible cabecera Received falsificada: $DETAIL$",
+    "placeholders": {
+      "detail": {
+        "content": "$1"
+      }
+    }
+  },
+  "forgedTimeReversal": {
+    "message": "inversión temporal"
+  },
+  "forgedSelfClaim": {
+    "message": "cabecera que suplanta su propio servidor (puede ser un falso positivo en correo reenviado o de listas)"
+  },
+  "optTrustedServers": {
+    "message": "Servidores receptores de confianza"
+  },
+  "optTrustedServersHelp": {
+    "message": "Un host o dominio por línea (p. ej. mx.example.com, google.com). En blanco = detección automática."
   }
 }

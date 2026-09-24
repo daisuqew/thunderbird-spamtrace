@@ -460,5 +460,52 @@
   },
   "optHelp": {
     "message": "Erste Schritte / Hilfe"
+  },
+  "labelSenderTrust": {
+    "message": "Verlässlichkeit"
+  },
+  "trustVerifiedAuto": {
+    "message": "Bestätigt (Eintrag des empfangenden Servers, automatisch erkannt)"
+  },
+  "trustVerifiedManual": {
+    "message": "Bestätigt (Eintrag des empfangenden Servers, eigene Server)"
+  },
+  "trustEstimated": {
+    "message": "Geschätzt (Vertrauensgrenze nicht gefunden)"
+  },
+  "chainUnverifiedTag": {
+    "message": "(nicht verifiziert)"
+  },
+  "markerUnverified": {
+    "message": "Nicht verifiziert"
+  },
+  "hopColTrust": {
+    "message": "Verlässlichkeit"
+  },
+  "hopVerified": {
+    "message": "Bestätigt"
+  },
+  "hopUnverified": {
+    "message": "Nicht verifiziert"
+  },
+  "reasonForgedReceived": {
+    "message": "Verdacht auf gefälschten Received-Header: $DETAIL$",
+    "placeholders": {
+      "detail": {
+        "content": "$1"
+      }
+    }
+  },
+  "forgedTimeReversal": {
+    "message": "Zeitumkehr"
+  },
+  "forgedSelfClaim": {
+    "message": "Header gibt sich als eigener Server aus (bei weitergeleiteten oder Mailinglisten-Mails evtl. Fehlalarm)"
+  },
+  "optTrustedServers": {
+    "message": "Vertrauenswürdige Empfangsserver"
+  },
+  "optTrustedServersHelp": {
+    "message": "Ein Host oder eine Domain pro Zeile (z. B. mx.example.com, google.com). Leer = automatische Erkennung."
   }
 }

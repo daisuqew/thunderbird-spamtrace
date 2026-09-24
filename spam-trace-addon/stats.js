@@ -19,7 +19,7 @@ const OUTPUT_DIR = "spam-trace";
 
 /* ---- 設定 ---- */
 
-const DEFAULT_SETTINGS = { serverUrl: "", autoSend: false, batchSize: 20, alertThreshold: null, customBrands: [], trustedDomains: [], homeCountry: "", homeLat: null, homeLon: null, geoProvider: "local", torEnabled: false };
+const DEFAULT_SETTINGS = { serverUrl: "", autoSend: false, batchSize: 20, alertThreshold: null, customBrands: [], trustedDomains: [], trustedServers: [], homeCountry: "", homeLat: null, homeLon: null, geoProvider: "local", torEnabled: false };
 
 async function getSettings() {
   const obj = await messenger.storage.local.get(SETTINGS_KEY);

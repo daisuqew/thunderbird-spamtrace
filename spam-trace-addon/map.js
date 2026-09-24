@@ -240,19 +240,31 @@ function _drawMap() {
       `left:${x1.toFixed(1)}px;top:${(y1 - 1).toFixed(1)}px;width:${len.toFixed(1)}px;height:2px;` +
       "transform-origin:0 50%;transform:rotate(" + ang.toFixed(2) + "deg);pointer-events:none;" +
       "background:repeating-linear-gradient(90deg,#e65100 0 6px,transparent 6px 10px);");
+
+    // v1.1.1: 線の中間に進行方向(送信側→受信側)の矢じり。短すぎる線(同一地点等)は省略
+    if (len >= 16) {
+      const mx = (x1 + x2) / 2;
+      const my = (y1 + y2) / 2;
+      _add(el,
+        `left:${(mx - 4).toFixed(1)}px;top:${(my - 5).toFixed(1)}px;width:0;height:0;` +
+        "border-top:5px solid transparent;border-bottom:5px solid transparent;" +
+        "border-left:8px solid #e65100;" +
+        "transform-origin:50% 50%;transform:rotate(" + ang.toFixed(2) + "deg);pointer-events:none;");
+    }
   }
 
   // --- マーカー(番号付き) ---
   points.forEach((p, i) => {
     const size = p.isOrigin ? 18 : 15;
+    const unv = !p.isOrigin && p.verified === false; // v1.1.0: 境界より下 = 未検証
     const m = _add(el,
       `width:${size}px;height:${size}px;border-radius:50%;` +
       `left:${(screenX(p.lon) - size / 2).toFixed(1)}px;top:${(screenY(p.lat) - size / 2).toFixed(1)}px;` +
-      `background:${p.isOrigin ? "#e53935" : "#42a5f5"};` +
-      `border:2px solid ${p.isOrigin ? "#b71c1c" : "#1565c0"};` +
+      `background:${p.isOrigin ? "#e53935" : unv ? "#bdbdbd" : "#42a5f5"};` +
+      `border:2px ${unv ? "dashed" : "solid"} ${p.isOrigin ? "#b71c1c" : unv ? "#616161" : "#1565c0"};` +
       "box-sizing:border-box;cursor:pointer;color:#fff;font-size:9px;font-weight:bold;" +
       "display:flex;align-items:center;justify-content:center;line-height:1;", _label(i));
-    const kind = _t(p.isOrigin ? "markerOrigin" : "markerRelay");
+    const kind = _t(p.isOrigin ? "markerOrigin" : unv ? "markerUnverified" : "markerRelay");
     m.title = `${_label(i)} ${kind}: ${p.ip}`;
     m.addEventListener("click", () => {
       document.getElementById("map-note").textContent =
@@ -288,7 +300,7 @@ function renderHopTable(points) {
   const table = document.createElement("table");
   table.style.cssText = "width:100%;border-collapse:collapse;font-size:11px;margin-top:4px;";
   const head = document.createElement("tr");
-  for (const key of ["hopColNo", "hopColIp", "hopColCountry", "hopColAsn"]) {
+  for (const key of ["hopColNo", "hopColIp", "hopColCountry", "hopColAsn", "hopColTrust"]) {
     const th = document.createElement("td");
     th.textContent = _t(key);
     th.style.cssText = "color:#777;border-bottom:1px solid #ddd;padding:2px 4px;white-space:nowrap;";
@@ -297,7 +309,9 @@ function renderHopTable(points) {
   table.appendChild(head);
   list.forEach((p, i) => {
     const tr = document.createElement("tr");
-    const cells = [_label(i), p.ip || "-", `${p.country || "-"}`, p.asn || "-"];
+    const trust = p.verified === true ? _t("hopVerified")
+      : p.verified === false ? _t("hopUnverified") : "-"; // v1.1.0
+    const cells = [_label(i), p.ip || "-", `${p.country || "-"}`, p.asn || "-", trust];
     cells.forEach((c, ci) => {
       const td = document.createElement("td");
       td.textContent = c;

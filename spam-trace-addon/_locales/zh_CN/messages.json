@@ -460,5 +460,52 @@
   },
   "optHelp": {
     "message": "入门 / 帮助"
+  },
+  "labelSenderTrust": {
+    "message": "可信度"
+  },
+  "trustVerifiedAuto": {
+    "message": "已确认（接收服务器记录，自动判定）"
+  },
+  "trustVerifiedManual": {
+    "message": "已确认（接收服务器记录，已设置的服务器）"
+  },
+  "trustEstimated": {
+    "message": "推测（未找到信任边界）"
+  },
+  "chainUnverifiedTag": {
+    "message": "（未验证）"
+  },
+  "markerUnverified": {
+    "message": "未验证"
+  },
+  "hopColTrust": {
+    "message": "可信度"
+  },
+  "hopVerified": {
+    "message": "已确认"
+  },
+  "hopUnverified": {
+    "message": "未验证"
+  },
+  "reasonForgedReceived": {
+    "message": "疑似伪造的 Received 头: $DETAIL$",
+    "placeholders": {
+      "detail": {
+        "content": "$1"
+      }
+    }
+  },
+  "forgedTimeReversal": {
+    "message": "时间倒序"
+  },
+  "forgedSelfClaim": {
+    "message": "冒充本方服务器的头（经转发或邮件列表的邮件可能误报）"
+  },
+  "optTrustedServers": {
+    "message": "受信任的接收服务器"
+  },
+  "optTrustedServersHelp": {
+    "message": "每行一个主机名或域名（例: mx.example.com、google.com）。留空则自动判定"
   }
 }

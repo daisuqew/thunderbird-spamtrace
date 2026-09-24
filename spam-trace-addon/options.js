@@ -58,6 +58,7 @@ async function load() {
   document.getElementById("custom-brands").value =
     s.customBrands && s.customBrands.length ? JSON.stringify(s.customBrands) : "";
   document.getElementById("trusted-domains").value = (s.trustedDomains || []).join("\n");
+  document.getElementById("trusted-servers").value = (s.trustedServers || []).join("\n"); // v1.1.0
 
   // IP位置情報プロバイダ（既定 local, RELEASE_PREP §2-1）。旧値(ip-api等)は local に正規化
   document.getElementById("geo-provider").value =
@@ -139,6 +140,8 @@ async function onSave() {
     }
     s.customBrands = customBrands;
     s.trustedDomains = document.getElementById("trusted-domains").value
+      .split(/[\n,]/).map((d) => d.trim().toLowerCase()).filter(Boolean);
+    s.trustedServers = document.getElementById("trusted-servers").value // v1.1.0
       .split(/[\n,]/).map((d) => d.trim().toLowerCase()).filter(Boolean);
 
     // 地図の中心（現在地, spec 09）: 緯度経度欄が有効ならそれ、無ければnull(自動)。国はUI復元用に保持

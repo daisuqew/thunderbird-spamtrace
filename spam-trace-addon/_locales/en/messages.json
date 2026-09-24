@@ -460,5 +460,52 @@
   },
   "optHelp": {
     "message": "Getting started / Help"
+  },
+  "labelSenderTrust": {
+    "message": "Confidence"
+  },
+  "trustVerifiedAuto": {
+    "message": "Verified (receiving server record, auto-detected)"
+  },
+  "trustVerifiedManual": {
+    "message": "Verified (receiving server record, your servers)"
+  },
+  "trustEstimated": {
+    "message": "Estimated (trust boundary not found)"
+  },
+  "chainUnverifiedTag": {
+    "message": "(unverified)"
+  },
+  "markerUnverified": {
+    "message": "Unverified"
+  },
+  "hopColTrust": {
+    "message": "Confidence"
+  },
+  "hopVerified": {
+    "message": "Verified"
+  },
+  "hopUnverified": {
+    "message": "Unverified"
+  },
+  "reasonForgedReceived": {
+    "message": "Suspected forged Received header: $DETAIL$",
+    "placeholders": {
+      "detail": {
+        "content": "$1"
+      }
+    }
+  },
+  "forgedTimeReversal": {
+    "message": "time reversal"
+  },
+  "forgedSelfClaim": {
+    "message": "header claiming your own server (may be a false positive for forwarded / mailing-list mail)"
+  },
+  "optTrustedServers": {
+    "message": "Trusted receiving servers"
+  },
+  "optTrustedServersHelp": {
+    "message": "One host or domain per line (e.g. mx.example.com, google.com). Blank = automatic detection."
   }
 }

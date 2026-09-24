@@ -197,7 +197,8 @@ messenger.messageDisplay.onMessageDisplayed.addListener(async (tab, message) => 
     if (excluded) return;
 
     const full = await messenger.messages.getFull(message.id);
-    const parsed = analyzeHeaders(full.headers || {});
+    const trustedServers = (await getSettings()).trustedServers || []; // v1.1.0
+    const parsed = analyzeHeaders(full.headers || {}, { trustedServers });
 
     let cls = null;
     if (parsed.senderIP) {

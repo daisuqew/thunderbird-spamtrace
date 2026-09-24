@@ -460,5 +460,52 @@
   },
   "optHelp": {
     "message": "はじめに / ヘルプ"
+  },
+  "labelSenderTrust": {
+    "message": "確度"
+  },
+  "trustVerifiedAuto": {
+    "message": "確認済み（受信サーバーの記録・自動判定）"
+  },
+  "trustVerifiedManual": {
+    "message": "確認済み（受信サーバーの記録・設定サーバー）"
+  },
+  "trustEstimated": {
+    "message": "推定（信頼境界を特定できず）"
+  },
+  "chainUnverifiedTag": {
+    "message": "（未検証）"
+  },
+  "markerUnverified": {
+    "message": "未検証"
+  },
+  "hopColTrust": {
+    "message": "確度"
+  },
+  "hopVerified": {
+    "message": "確認済み"
+  },
+  "hopUnverified": {
+    "message": "未検証"
+  },
+  "reasonForgedReceived": {
+    "message": "偽装された Received の疑い: $DETAIL$",
+    "placeholders": {
+      "detail": {
+        "content": "$1"
+      }
+    }
+  },
+  "forgedTimeReversal": {
+    "message": "時刻の逆転"
+  },
+  "forgedSelfClaim": {
+    "message": "自サーバーを名乗るヘッダ（転送・メーリングリスト経由では誤検知の可能性あり）"
+  },
+  "optTrustedServers": {
+    "message": "信頼する受信サーバー"
+  },
+  "optTrustedServersHelp": {
+    "message": "1行に1つ、ホスト名またはドメイン（例: mx.example.jp、google.com）。空欄なら自動判定"
   }
 }

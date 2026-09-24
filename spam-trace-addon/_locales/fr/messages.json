@@ -460,5 +460,52 @@
   },
   "optHelp": {
     "message": "Démarrage / Aide"
+  },
+  "labelSenderTrust": {
+    "message": "Fiabilité"
+  },
+  "trustVerifiedAuto": {
+    "message": "Vérifié (enregistrement du serveur de réception, détection automatique)"
+  },
+  "trustVerifiedManual": {
+    "message": "Vérifié (enregistrement du serveur de réception, vos serveurs)"
+  },
+  "trustEstimated": {
+    "message": "Estimé (limite de confiance introuvable)"
+  },
+  "chainUnverifiedTag": {
+    "message": "(non vérifié)"
+  },
+  "markerUnverified": {
+    "message": "Non vérifié"
+  },
+  "hopColTrust": {
+    "message": "Fiabilité"
+  },
+  "hopVerified": {
+    "message": "Vérifié"
+  },
+  "hopUnverified": {
+    "message": "Non vérifié"
+  },
+  "reasonForgedReceived": {
+    "message": "En-tête Received probablement falsifié : $DETAIL$",
+    "placeholders": {
+      "detail": {
+        "content": "$1"
+      }
+    }
+  },
+  "forgedTimeReversal": {
+    "message": "inversion chronologique"
+  },
+  "forgedSelfClaim": {
+    "message": "en-tête usurpant votre propre serveur (faux positif possible pour un courriel transféré ou de liste de diffusion)"
+  },
+  "optTrustedServers": {
+    "message": "Serveurs de réception de confiance"
+  },
+  "optTrustedServersHelp": {
+    "message": "Un hôte ou domaine par ligne (ex. mx.example.com, google.com). Vide = détection automatique."
   }
 }

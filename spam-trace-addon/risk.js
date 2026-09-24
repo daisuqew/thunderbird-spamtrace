@@ -71,6 +71,12 @@ async function calcRisk(parsed, cls, linkInfo, brandInfo, originInfo) {
   if (c.msgIdMismatch) add(W.msgIdMismatch, _t("reasonMsgIdMismatch"), "msgIdMismatch");
   if (c.dateAnomaly) add(W.dateAnomaly, _t("reasonDateAnomaly"), "dateAnomaly");
   if (c.noReceived) add(W.noReceived, _t("reasonNoReceived"), "noReceived");
+  // v1.1.0: 偽装 Received の疑い ("self" は転送・メーリングリストで誤検知の可能性あり)
+  if (c.forgedReceived) {
+    const why = (c.forgedReasons || [])
+      .map((k) => _t(k === "time" ? "forgedTimeReversal" : "forgedSelfClaim")).join(" / ");
+    add(W.forgedReceived, _t("reasonForgedReceived", [why]), "forgedReceived");
+  }
 
   /* ---- 経路: 同一ドメイン直送の減点 (spec 06 v3) ---- */
   const noAuthFail = spf !== "fail" && dkim !== "fail" && dmarc !== "fail";

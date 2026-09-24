@@ -29,6 +29,7 @@
     "msgIdMismatch": 5,
     "dateAnomaly": 10,
     "noReceived": 10,
+    "forgedReceived": 15,
     "linkTextSpoof": 25,
     "ipLink": 20,
     "punycode": 15,

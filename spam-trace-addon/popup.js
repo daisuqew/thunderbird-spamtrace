@@ -71,7 +71,8 @@ async function main() {
     }
 
     const full = await messenger.messages.getFull(messageId);
-    const parsed = analyzeHeaders(rootHeaders(full));
+    const trustedServers = (await getSettings()).trustedServers || []; // v1.1.0
+    const parsed = analyzeHeaders(rootHeaders(full), { trustedServers });
     const linkInfo = analyzeLinks(extractLinks(full), parsed.fromDomain);
     const brandInfo = await checkBrand(parsed);
 
@@ -226,6 +227,11 @@ function render(parsed, cls, risk, geoError, linkInfo, brandInfo) {
   setAuth("dmarc", parsed.auth.dmarc);
 
   setText("sender-ip", parsed.senderIP || _t("senderNotDetected"));
+  setText("sender-trust", parsed.senderIP
+    ? _t(parsed.senderVerified
+        ? (parsed.trustMode === "manual" ? "trustVerifiedManual" : "trustVerifiedAuto")
+        : "trustEstimated")
+    : "-"); // v1.1.0
   setText("sender-host", parsed.senderHost);
   setText("relay-count", parsed.relayCount);
   if (cls) {
@@ -242,15 +248,19 @@ function render(parsed, cls, risk, geoError, linkInfo, brandInfo) {
   }
 
   $("received-chain").textContent = parsed.chain.length
-    ? parsed.chain.map((e, i) => `[${i + 1}] ${e.raw}`).join("\n\n")
+    ? parsed.chain.map((e, i) =>
+        `[${i + 1}] ${e.verified === false ? _t("chainUnverifiedTag") + " " : ""}${e.raw}`).join("\n\n")
     : _t("noReceivedHeader");
 }
 
 async function renderRouteMap(parsed) {
   const routeIPs = [];
+  const ipVerified = {}; // v1.1.0: IPごとの確度 (境界以上に1度でも現れれば確認済み)
   for (let i = parsed.chain.length - 1; i >= 0; i--) {
+    const v = parsed.chain[i].verified;
     for (const ip of parsed.chain[i].ips) {
       if (!isPrivateIP(ip) && !routeIPs.includes(ip)) routeIPs.push(ip);
+      if (v === true || !(ip in ipVerified)) ipVerified[ip] = v === true ? true : v;
     }
   }
   const points = [];
@@ -263,6 +273,7 @@ async function renderRouteMap(parsed) {
         asn: (geo.as || "").split(" ")[0] || null,
         org: geo.org || geo.isp || null,
         isOrigin: ip === parsed.senderIP,
+        verified: ipVerified[ip] === undefined ? null : ipVerified[ip], // v1.1.0
       });
     } catch (e) {
       if (!lookupErr) lookupErr = e && e.message ? e.message : String(e);
